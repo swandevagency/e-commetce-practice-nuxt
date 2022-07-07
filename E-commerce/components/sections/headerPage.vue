@@ -2,15 +2,15 @@
   export default {
     name: 'headerPage',
     components: {
-        SearchIcon: () => import ('@/components/icons/searchIcon'),
-        SignInIcon: () => import ('@/components/icons/signin'),
-        CartIcon: () => import ('@/components/icons/cartIcon'),
-        HumberMenu: () => import ('@/components/icons/hambermenu'),
-        FruitBasket: () => import ('@/components/icons/fruitbasket'),
-        HotSales: () => import ('@/components/icons/hot'),
-        Discount: () => import ('@/components/icons/discount'),
-        Awesome: () => import ('@/components/icons/awesome'),
-        Location: () => import ('@/components/icons/location.vue')
+        SearchIcon: () => import ('../icons/searchIcon'),
+        SignInIcon: () => import ('../icons/signin'),
+        CartIcon: () => import ('../icons/cartIcon'),
+        HumberMenu: () => import ('../icons/hambermenu'),
+        FruitBasket: () => import ('../icons/fruitbasket'),
+        HotSales: () => import ('../icons/hot'),
+        Discount: () => import ('../icons/discount'),
+        Awesome: () => import ('../icons/awesome'),
+        Location: () => import ('../icons/location.vue')
     },
   }
 </script>
@@ -20,7 +20,7 @@
         <div class="header-section">
             <div class="upper-header-section">
                 <div class="upper-header-section-right">
-                    <img class="header-logo" src="../static/logo.svg"/>
+                    <img class="header-logo" src="../../static/logo.svg"/>
                     <div class="searchBar">
                         <searchIcon />
                         <input class="header-searchbar-input" placeholder="جستجو" />
@@ -174,7 +174,7 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        padding: 8px 16px;
+        padding: 8px 16px/*  0px */;
     }
 
     .navbar{
