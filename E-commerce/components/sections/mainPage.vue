@@ -1,77 +1,113 @@
 <script>
+import Categories from '../nested-section/categories.vue'
     export default {
     name: 'IndexPage',
     components: {
-      HotOffers:() => import ("@/components/sections/hotOffers.vue")
+        HeroSlider: () => import ("../nested-section/heroSlider.vue"),
+        SubHero:() => import ("../nested-section/subHeroSection.vue"),
+        HotOffers:() => import ("@/components/sections/hotOffers.vue"),
+        Banner:() => import ("@/components/nested-section/banner.vue"),
+        Categories:() => import ("../nested-section/categories.vue"),
+        DigiSuggestions: () => import ("../nested-section/digiSuggestions.vue"),
+        DigitalCategory: () => import ("../nested-section/digitalCategory.vue")
+
     },  
   }
 </script>
 <template>
-    <div class="main-container">
-        <section class="sub-hero-section">
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/1.png"/>
-                <p>دیجی‌کالا جت</p>
-            </div>
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/2.png"/>
-                <p>تخفیف‌های ساعت</p>
-            </div>
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/3.png"/>
-                <p>دیجی پی</p>
-            </div>
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/4.png"/>
-                <p>دیجی‌کالا مهر</p>
-            </div>
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/5.png"/>
-                <p>ماموریت‌ها</p>
-            </div>
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/6.png"/>
-                <p>دیجی پلاس</p>
-            </div>
-            <div class="sub-hero-items">
-                <img src="../../static/sub-hero/7.png"/>
-                <p>دیجی کلاب</p>
-            </div>
-            <div class="sub-hero-items">
-                <div class="sub-hero-more"></div>
-                <p>بیشتر</p>
-            </div>
-        </section>
+    <div>
+        <HeroSlider />
+        <div class="main-container">
 
-    </div>
+            <SubHero />
+
+            <HotOffers />
+
+            <banner />
+
+            <div class="category-banner-wrapper">
+                <div class="first-category-banner-items">
+                    <img src="../../static/category-banner/1.gif"/>
+                </div>
+                <div class="first-category-banner-items">
+                    <img src="../../static/category-banner/2.jpg"/>
+                </div>
+                <div class="first-category-banner-items">
+                    <img src="../../static/category-banner/3.jpg"/>
+                </div>
+                <div class="first-category-banner-items">
+                    <img src="../../static/category-banner/4.jpg"/>
+                </div>
+            </div>
+
+            <Categories />
+
+            <div class="category-banner-wrapper topMargin80">
+                <div class="second-category-banner-items">
+                    <img src="../../static/category-banner/5.jpg"/>
+                </div>
+                <div class="second-category-banner-items">
+                    <img src="../../static/category-banner/6.jpg"/>
+                </div>
+            </div>
+
+            <DigiSuggestions />
+
+            <div class="category-banner-wrapper topMargin30">
+                <div class="second-category-banner-items">
+                    <img src="../../static/category-banner/7.jpg"/>
+                </div>
+                <div class="second-category-banner-items">
+                    <img src="../../static/category-banner/8.jpg"/>
+                </div>
+            </div>
+
+            <DigitalCategory />
+            
+        </div>
+    </div>    
 </template>
 <style lang="scss">
     .main-container{
-        padding: 0 5%;
+        margin: 0px 96px;
+        padding: 0px 16px;
     }
 
-    .sub-hero-section{
-        width: 100%;
+    .category-banner-wrapper{
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-evenly;
-        padding-top: 40px;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 25px;
     }
 
-    .sub-hero-items{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .first-category-banner-items{
+        width:24%;
+        margin-top: 0px;
         img{
-            width: 52px;
-            height: 52px;
+            width:100%;
+            border-radius: 16px;
+            object-fit: cover;
         }
     }
 
-    .sub-hero-more{
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        background-color:#f0f0f1
+    .topMargin80{
+        margin-top: 80px;
     }
+
+    .second-category-banner-items{
+        width:calc(49% + 4px);
+        margin-top: 0px;
+        img{
+            width:100%;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+    }
+
+    .topMargin30{
+        margin-top:30px
+    }
+
+
 </style>
