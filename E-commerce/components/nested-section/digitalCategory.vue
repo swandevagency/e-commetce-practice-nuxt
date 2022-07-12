@@ -121,7 +121,7 @@ export default {
 <style lang="scss">
     .digital-category-section-wrapper{
         width: 100%;
-        margin: 50px 0px;
+        margin: 50px 0px 25px;
     }
 
     .digital-category-container{
@@ -144,6 +144,8 @@ export default {
             padding: 0px 25px;
             padding-top:5px;
             background-color: #fff;
+            font-size: 1.1em;
+            font-weight: 400;
         }
         p{
             padding: 0px 25px;

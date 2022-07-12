@@ -17,7 +17,7 @@
 
 <template>
     <div>
-        <div class="header-section">
+        <div class="header-section" id="onScroll">
             <div class="upper-header-section">
                 <div class="upper-header-section-right">
                     <img class="header-logo" src="../../static/logo.svg"/>
@@ -28,9 +28,9 @@
                 </div>
                 <div class="upper-header-section-left">
                     <div class="header-user-section">
-                        <div class="header-signup-section">
+                        <div to="/SignUp" class="header-signup-section">
                             <SignInIcon />
-                            <a class="signup">ورود | ثبت‌نام</a>
+                            <NuxtLink to="/SignUp" class="signup">ورود | ثبت‌نام</NuxtLink>
                         </div>
                         <div class="header-cart">
                             <CartIcon />
@@ -159,6 +159,7 @@
         border-radius:8px;
         a{
             margin-right: 10px;
+            color: #000;
         }
     }
 
@@ -188,6 +189,10 @@
         svg{
             width: 100%;
         }
+    }
+
+    .sub-header-icon{
+        align-items: center;
     }
 
     .sub-header-main-nav{

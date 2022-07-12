@@ -4,6 +4,7 @@
     components: {
       HeaderPage: () => import("@/components/sections/headerPage.vue"),
       MainPage: () => import("@/components/sections/mainPage.vue"),
+      FooterPage: () => import("@/components/sections/footerPage.vue"),
     },  
   }
 </script>
@@ -13,5 +14,7 @@
     <HeaderPage />
 
     <MainPage/>
+
+    <FooterPage/>
   </div>
 </template>
