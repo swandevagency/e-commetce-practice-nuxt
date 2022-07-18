@@ -1,9 +1,3 @@
-<script>
-export default {
-
-}
-</script>
-
 <template>
     <div>
         <div class="category">
@@ -56,6 +50,11 @@ export default {
     </div>
 </template>
 
+<script>
+export default {
+
+}
+</script>
 
 <style lang="scss">
     .category{

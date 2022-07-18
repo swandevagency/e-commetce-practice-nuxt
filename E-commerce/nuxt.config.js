@@ -5,6 +5,9 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js', defer: true }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

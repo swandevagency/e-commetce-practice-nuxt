@@ -30,7 +30,11 @@
                 <p>دیجی کلاب</p>
             </div>
             <div class="sub-hero-items">
-                <div class="sub-hero-more"></div>
+                <div class="sub-hero-more">
+                    <svg width="28" height="28" fill="#a1a3a8" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m16.5 11.995c0-1.242 1.008-2.25 2.25-2.25s2.25 1.008 2.25 2.25-1.008 2.25-2.25 2.25-2.25-1.008-2.25-2.25zm-6.75 0c0-1.242 1.008-2.25 2.25-2.25s2.25 1.008 2.25 2.25-1.008 2.25-2.25 2.25-2.25-1.008-2.25-2.25zm-6.75 0c0-1.242 1.008-2.25 2.25-2.25s2.25 1.008 2.25 2.25-1.008 2.25-2.25 2.25-2.25-1.008-2.25-2.25z"/>
+                    </svg>
+                </div>
                 <p>بیشتر</p>
             </div>
         </section>
@@ -39,17 +43,18 @@
 
 <script>
 export default {
-
+    
 }
 </script>
+
 
 <style lang="scss">
     .sub-hero-section{
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-evenly;
-        padding: 40px 0px;
+        justify-content: space-around;
+        padding: 31px 0px;
     }
 
     .sub-hero-items{
@@ -66,6 +71,9 @@ export default {
         width: 52px;
         height: 52px;
         border-radius: 50%;
-        background-color:#f0f0f1
+        background-color:#f0f0f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>

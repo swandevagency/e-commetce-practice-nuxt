@@ -5,7 +5,7 @@ import Categories from '../nested-section/categories.vue'
     components: {
         HeroSlider: () => import ("../nested-section/heroSlider.vue"),
         SubHero:() => import ("../nested-section/subHeroSection.vue"),
-        HotOffers:() => import ("@/components/sections/hotOffers.vue"),
+        HotOffers:() => import ("../nested-section/hotOffers.vue"),
         Banner:() => import ("@/components/nested-section/banner.vue"),
         Categories:() => import ("../nested-section/categories.vue"),
         DigiSuggestions: () => import ("../nested-section/digiSuggestions.vue"),

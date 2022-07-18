@@ -1,23 +1,11 @@
-<script>
-  export default {
-    name: 'headerPage',
-    components: {
-        SearchIcon: () => import ('../icons/searchIcon'),
-        SignInIcon: () => import ('../icons/signin'),
-        CartIcon: () => import ('../icons/cartIcon'),
-        HumberMenu: () => import ('../icons/hambermenu'),
-        FruitBasket: () => import ('../icons/fruitbasket'),
-        HotSales: () => import ('../icons/hot'),
-        Discount: () => import ('../icons/discount'),
-        Awesome: () => import ('../icons/awesome'),
-        Location: () => import ('../icons/location.vue')
-    },
-  }
-</script>
-
 <template>
     <div>
-        <div class="header-section" id="onScroll">
+        <div id="onScroll"></div>
+        <div class="white-space"></div>
+        <div class="header-section">
+            <div class="header-banner">
+                <img src="../../static/header-banner.jpg" />
+            </div>
             <div class="upper-header-section">
                 <div class="upper-header-section-right">
                     <img class="header-logo" src="../../static/logo.svg"/>
@@ -38,12 +26,15 @@
                     </div>
                 </div>
             </div>
-            <div class="button-header-section">
+            <div @scroll="handleScroll()" class="bottom-header-section">
                 <nav class="navbar">
                     <div class="sub-header-navbar">
-                        <div class="sub-header-main-nav">
+                        <div class="sub-header-main-nav" @mouseenter="dropDownOn()" @mouseleave="dropDownOff()">
                             <HumberMenu />
-                            <a>دسته‌بندی کالاها</a>
+                            <button>دسته‌بندی کالاها</button>
+                            <div @mousemove="dropDownOn()">
+                                <Classification />
+                            </div>
                         </div>
 
                         <div class="sub-header-minor-nav">
@@ -82,11 +73,68 @@
     </div>
 </template>
 
+<script>
+    export default {
+        name: 'headerPage',
+        props: ['title'],
+        components: {
+            SearchIcon: () => import ('../icons/searchIcon'),
+            SignInIcon: () => import ('../icons/signin'),
+            CartIcon: () => import ('../icons/cartIcon'),
+            HumberMenu: () => import ('../icons/hambermenu'),
+            FruitBasket: () => import ('../icons/fruitbasket'),
+            HotSales: () => import ('../icons/hot'),
+            Discount: () => import ('../icons/discount'),
+            Awesome: () => import ('../icons/awesome'),
+            Location: () => import ('../icons/location.vue'),
+            Classification: () => import ('../../components/nested-section/classification.vue'),
+        
+        },
+
+        methods: {
+            handleScroll() {
+                 gsap.fromTo('.bottom-header-section', {x: 100, ease: 'none' },{y: '-= 100%', ease: 'none'})
+            },
+
+            dropDownOn() {
+                const classification = document.querySelector('.classification-section-wrapper')
+                classification.style.display = 'initial';
+            },
+
+            dropDownOff() {
+                const classification = document.querySelector('.classification-section-wrapper')
+                classification.style.display = 'none';
+            }
+        }
+    }
+</script>
+
 <style lang="scss">
+
+    .white-space{
+        height: 144px;
+        position: relative;
+    }
+
     .header-section {
         width: 100%;
         display: flex;
         flex-flow: column;
+        background-color: #fff;
+        position: fixed;
+        top: 0px;
+        z-index: 10000000000000000;
+        display: block;
+        box-shadow: 1px 1px 2px 0px #0000003d;
+    }
+
+    .header-banner{
+        width: 100%;
+        img{
+            height: 60px;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     .upper-header-section {
@@ -94,6 +142,8 @@
         display: flex;
         flex-flow: row nowrap;
         padding: 12px 16px;
+        margin-top: -4px;
+
     }
 
     .upper-header-section-right {
@@ -101,6 +151,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+
     }
 
     .header-user-section {
@@ -170,12 +221,13 @@
     }
 
 
-    .button-header-section {
+    .bottom-header-section {
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        padding: 8px 16px/*  0px */;
+        padding: 8px 16px 0px;
+        position: relative;
     }
 
     .navbar{
@@ -186,8 +238,9 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+
         svg{
-            width: 100%;
+            fill: #424750;
         }
     }
 
@@ -199,10 +252,14 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        a{
+        button{
             font-size:0.9em;
             margin-right: 5px;        
+            background: none;
+            border: none;
         }
+
+
     }
 
     .sub-header-minor-nav{
@@ -226,13 +283,20 @@
         flex-flow: row nowrap;
     }
 
+
+    @keyframes header-animation {
+        from {left: 0%;}
+        to {right: 100%;}
+    } 
     .sub-minor-nav:hover,
     .sub-header-main-nav:hover,
     .faq:hover,
     .salesman:hover{
+        animation: header-animation 3s alternate;;
         border-bottom: 1px solid red;
     }
-
+ 
+    
     .faq{
         margin-left: 20px;
         color:#62666d;

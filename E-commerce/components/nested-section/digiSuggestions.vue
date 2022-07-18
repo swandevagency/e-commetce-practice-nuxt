@@ -1,124 +1,134 @@
-<script>
-export default {
-
-}
-</script>
-
 <template>
   <div>
-      <div class="suggestions-section-wrapper">
-        <div class="suggestion-header">
-            <h3>پیشنهاد دیجی‌کالا</h3>
+        <div class="suggestions-section-wrapper">
+            <div class="suggestion-header">
+                <h3>پیشنهاد دیجی‌کالا</h3>
+            </div>
+            <div class="suggestion-blocks-wrapper">
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/1.png" />
+                        </div>
+                        <p>گوشی موبایل</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/2.png" />
+                        </div>
+                        <p>ساعت هوشمند</p>
+                    </a>
+                </div>
+
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/3.png" />
+                        </div>
+                        <p>کنسول خانگی</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/4.png" />
+                        </div>
+                        <p>پاوربانک</p>
+                    </a>
+                </div>
+
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/5.png" />
+                        </div>
+                        <p>لپ تاپ</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/6.png" />
+                        </div>
+                        <p>مچ بند</p>
+                    </a>
+                </div>
+
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/7.png" />
+                        </div>
+                        <p>جوراب</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/8.png" />
+                        </div>
+                        <p>کولر آبی</p>
+                    </a>
+                </div>
+
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/9.png" />
+                        </div>
+                        <p>کولر گازی</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/1.png" />
+                        </div>
+                        <p>شارژر تبلت</p>
+                    </a>
+                </div>
+
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/2.png" />
+                        </div>
+                        <p>هدفون</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/3.png" />
+                        </div>
+                        <p>کنسول خانگی</p>
+                    </a>
+                </div>
+
+                <div class="suggestion-blocks">
+                    <a class="suggestion-item sugg-border-bottom">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/4.png" />
+                        </div>
+                        <p>گوشی موبایل</p>
+                    </a>
+                    <a  class="suggestion-item">
+                        <div class="suggestion-item-background">
+                            <img src="../../static/Categories/5.png" />
+                        </div>
+                        <p>ساعت مچی</p>
+                    </a>
+                </div>
+            </div>
+            <div @click="SuggestionLeftControl">
+                <LeftControl />
+            </div>
         </div>
-        <div class="suggestion-blocks-wrapper">
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/1.png" />
-                    </div>
-                    <p>گوشی موبایل</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/2.png" />
-                    </div>
-                    <p>ساعت هوشمند</p>
-                </a>
-            </div>
-
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/3.png" />
-                    </div>
-                    <p>کنسول خانگی</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/4.png" />
-                    </div>
-                    <p>پاوربانک</p>
-                </a>
-            </div>
-
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/5.png" />
-                    </div>
-                    <p>لپ تاپ</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/6.png" />
-                    </div>
-                    <p>مچ بند</p>
-                </a>
-            </div>
-
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/7.png" />
-                    </div>
-                    <p>جوراب</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/8.png" />
-                    </div>
-                    <p>کولر آبی</p>
-                </a>
-            </div>
-
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/9.png" />
-                    </div>
-                    <p>کولر گازی</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/1.png" />
-                    </div>
-                    <p>شارژر تبلت</p>
-                </a>
-            </div>
-
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/2.png" />
-                    </div>
-                    <p>هدفون</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/3.png" />
-                    </div>
-                    <p>کنسول خانگی</p>
-                </a>
-            </div>
-
-            <div class="suggestion-blocks">
-                <a class="suggestion-item sugg-border-bottom">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/4.png" />
-                    </div>
-                    <p>گوشی موبایل</p>
-                </a>
-                <a  class="suggestion-item">
-                    <div class="suggestion-item-background">
-                        <img src="../../static/Categories/5.png" />
-                    </div>
-                    <p>ساعت مچی</p>
-                </a>
-            </div>
-        </div>
-      </div>
   </div>
 </template>
+
+<script>
+    export default {
+        components:{
+            LeftControl: () => import('../buttons/leftControlCarousel.vue')
+        },
+        methods:{
+            SuggestionLeftControl(){
+                gsap.to('.suggestion-blocks', {x: '+= 101px', ease: 'none' })
+            }
+        }
+    }
+</script>
 
 
 <style lang="scss">
@@ -128,6 +138,7 @@ export default {
         flex-direction: column;
         align-items: center;
         margin: 40px 0px;
+        position: relative;
     }
 
     .suggestion-header{
@@ -192,5 +203,9 @@ export default {
             height: 60px;
 
         }
+    }
+    
+    .left-control-carousel{
+        top: 54%;
     }
 </style>

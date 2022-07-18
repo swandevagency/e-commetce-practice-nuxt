@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    direction: rtl
+    direction: rtl;
 }
 
 @font-face {
@@ -14,7 +14,12 @@
          
 }
 
-p,h1,h2,h3,h4,h5,h6,a{
+p,h1,h2,h3,h4,h5,h6,a,span,button{
+    font-family: "Iran Yekan";
+    font-size: 0.8em;
+}
+
+::placeholder{
     font-family: "Iran Yekan";
     font-size: 0.8em;
 }
