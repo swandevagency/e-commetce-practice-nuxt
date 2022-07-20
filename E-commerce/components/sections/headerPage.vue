@@ -104,15 +104,24 @@
             dropDownOff() {
                 const classification = document.querySelector('.classification-section-wrapper')
                 classification.style.display = 'none';
+            },     
+            scrollFunction() {
+                if (document.body.scrollTop > 500) {
+                    document.querySelector(".bottom-header-section").style.display = "none";
+                }
             }
+        },
+        mounted(){
+            this.scrollFunction();
         }
+        
     }
 </script>
 
 <style lang="scss">
 
     .white-space{
-        height: 144px;
+        height: 173px;
         position: relative;
     }
 
@@ -238,7 +247,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-
+        
         svg{
             fill: #424750;
         }
@@ -252,6 +261,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+        padding: 0px 0px 7px;
         button{
             font-size:0.9em;
             margin-right: 5px;        
@@ -281,6 +291,7 @@
     .sub-minor-nav{
         display: flex;
         flex-flow: row nowrap;
+        padding: 0px 0px 7px;
     }
 
 
@@ -300,10 +311,12 @@
     .faq{
         margin-left: 20px;
         color:#62666d;
+        padding: 0px 0px 7px;
     }
 
     .salesman{
         color:#62666d;
+        padding: 0px 0px 7px;
     }
 
     .header-location-section{

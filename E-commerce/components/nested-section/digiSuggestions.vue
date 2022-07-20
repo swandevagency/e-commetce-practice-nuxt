@@ -2,7 +2,7 @@
   <div>
         <div class="suggestions-section-wrapper">
             <div class="suggestion-header">
-                <h3>پیشنهاد دیجی‌کالا</h3>
+                <h3>{{suggestionTitle}}</h3>
             </div>
             <div class="suggestion-blocks-wrapper">
                 <div class="suggestion-blocks">
@@ -121,6 +121,9 @@
     export default {
         components:{
             LeftControl: () => import('../buttons/leftControlCarousel.vue')
+        },
+        props: {
+            suggestionTitle: String
         },
         methods:{
             SuggestionLeftControl(){

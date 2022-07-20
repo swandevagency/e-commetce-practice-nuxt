@@ -305,12 +305,23 @@
 
 <script>
     export default {
+        data(){
+            return {
+                
+            }
+        },
         components:{
             LeftControl: () => import('../buttons/leftControlCarousel.vue')
         },
         methods:{
             hotScroll(){
                 gsap.to('.hot-offer-goods-wrapper', {x: '+= 182px', ease: 'none' })
+                const hotOffersCarousel = document.querySelector('.hot-offer-goods-wrapper')
+                const hotOffersCarouselLastItem = [hotOffersCarousel.length - 1]
+                
+                if (!hotOffersCarouselLastItem ) {
+                    gsap.disable()
+                }
             }
         }
     }
@@ -322,6 +333,7 @@
         border-radius: 16px;
         padding: 20px 12px 20px 3px;
         position: relative;
+            
     }
 
     .hot-offers{

@@ -1,24 +1,6 @@
-<script>
-import Categories from '../nested-section/categories.vue'
-    export default {
-    name: 'IndexPage',
-    components: {
-        HeroSlider: () => import ("../nested-section/heroSlider.vue"),
-        SubHero:() => import ("../nested-section/subHeroSection.vue"),
-        HotOffers:() => import ("../nested-section/hotOffers.vue"),
-        Banner:() => import ("@/components/nested-section/banner.vue"),
-        Categories:() => import ("../nested-section/categories.vue"),
-        DigiSuggestions: () => import ("../nested-section/digiSuggestions.vue"),
-        DigitalCategory: () => import ("../nested-section/digitalCategory.vue"),
-        SpecialServices:() => import ("../nested-section/specialServices.vue"),
-        DigiClubBanner: () => import ("../nested-section/digiClubBanner.vue"),
-
-    },  
-  }
-</script>
 <template>
     <div>
-        <HeroSlider />
+        <HeroSlider mainPageHeroSlider="" />
         <div class="main-container">
 
             <SubHero />
@@ -42,7 +24,7 @@ import Categories from '../nested-section/categories.vue'
                 </div>
             </div>
 
-            <Categories />
+            <Categories categories-title="دسته‌بندی‌های دیجی‌کالا"/>
 
             <div class="category-banner-wrapper topMargin80">
                 <div class="second-category-banner-items">
@@ -53,7 +35,7 @@ import Categories from '../nested-section/categories.vue'
                 </div>
             </div>
 
-            <DigiSuggestions />
+            <DigiSuggestions suggestion-title="پیشنهاد دیجی‌کالا" />
 
             <div class="category-banner-wrapper topMargin30">
                 <div class="second-category-banner-items">
@@ -101,6 +83,36 @@ import Categories from '../nested-section/categories.vue'
         </div>
     </div>    
 </template>
+
+<script>
+    export default {
+        data() {
+            mainPageHeroSlider: [
+                {path1: '../../static/Slider-Images/1.jpg'},
+                {path2: '../../static/Slider-Images/2.jpg'},
+                {path3: '../../static/Slider-Images/3.jpg'},
+                {path4: '../../static/Slider-Images/4.jpg'},
+                {path5: '../../static/Slider-Images/5.jpg'},
+                {path6: '../../static/Slider-Images/6.jpg'},
+                {path7: '../../static/Slider-Images/7.jpg'},
+            ]
+        },
+        name: 'IndexPage',
+        components: {
+            HeroSlider: () => import ("../nested-section/heroSlider.vue"),
+            SubHero:() => import ("../nested-section/subHeroSection.vue"),
+            HotOffers:() => import ("../nested-section/hotOffers.vue"),
+            Banner:() => import ("@/components/nested-section/banner.vue"),
+            Categories:() => import ("../nested-section/categories.vue"),
+            DigiSuggestions: () => import ("../nested-section/digiSuggestions.vue"),
+            DigitalCategory: () => import ("../nested-section/digitalCategory.vue"),
+            SpecialServices:() => import ("../nested-section/specialServices.vue"),
+            DigiClubBanner: () => import ("../nested-section/digiClubBanner.vue"),
+
+        },  
+  }
+</script>
+
 <style lang="scss">
     .main-container{
         margin: 0px 96px;

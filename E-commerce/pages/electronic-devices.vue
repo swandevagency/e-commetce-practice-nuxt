@@ -2,9 +2,26 @@
     <div>
         <HeaderPage />
             <div class="electronic-devices-wrapper">
-                <HeroSlider />
+                <HeroSlider  :mainPageHeroSlider="xo"/>
                 <HotOffers />
-                <Categories />
+                <Categories categories-title="خرید بر اساس دسته‌بندی" />
+
+                <div class="electronic-devices-banners-section">
+                    <a class="electronic-devices-banner">
+                        <img src="../static/electronic-devices-page-banners/1.jpg" />
+                    </a>
+                    <a class="electronic-devices-banner">
+                        <img src="../static/electronic-devices-page-banners/2.jpg" />
+                    </a>
+                    <a class="electronic-devices-banner">
+                        <img src="../static/electronic-devices-page-banners/3.jpg" />
+                    </a>
+                    <a class="electronic-devices-banner">
+                        <img src="../static/electronic-devices-page-banners/4.jpg" />
+                    </a>
+                </div>
+
+                <DigiSuggestions suggestion-title="دسته‌بندی‌های پیشنهادی"/>
             </div>
         <FooterPage />
     </div>
@@ -12,11 +29,23 @@
 
 <script>
 export default {
+    data() {
+        return {
+            xo: {
+                path1: '../../static/electronic-devices-page-hero-slider/1.jpg',
+                path2: '../../static/electronic-devices-page-hero-slider/2.jpg',
+                path3: '../../static/electronic-devices-page-hero-slider/3.jpg',
+                path4: '../../static/electronic-devices-page-hero-slider/4.jpg',
+                path5: '../../static/electronic-devices-page-hero-slider/5.jpg',
+            }
+        }
+    },
     components: {
         HeaderPage: () => import("@/components/sections/headerPage.vue"),
         HeroSlider: () => import ("@/components/nested-section/heroSlider.vue"),
         HotOffers:() => import ("@/components/nested-section/hotOffers.vue"),
         Categories:() => import ("@/components/nested-section/categories.vue"),
+        DigiSuggestions: () => import ("@/components/nested-section/digiSuggestions.vue"),
         
         FooterPage: () => import("@/components/sections/footerPage.vue"),
     },
@@ -24,6 +53,9 @@ export default {
 </script>
 
 <style lang="scss">
+    .hot-offers-section{
+        background: linear-gradient(to top,#5c51bf,#6763d9);
+    }
     .electronic-devices-wrapper{
         margin-top: 50px;
         padding: 0px 120px;
@@ -34,7 +66,24 @@ export default {
     }
 
     .hot-offers-section{
-        background: linear-gradient(to top,#5c51bf,#6763d9);
+        
         margin: 20px 0px 25px;
+    }
+
+    .electronic-devices-banners-section{
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 16px;
+        margin: 60px 0px 20px;
+    }
+
+    .electronic-devices-banner{
+        flex-basis: 49%;
+
+        img{
+            border-radius: 16px;
+            width: 100%;
+            height: 100%;
+        }
     }
 </style>

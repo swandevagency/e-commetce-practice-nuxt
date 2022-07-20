@@ -2,7 +2,7 @@
     <div>
         <div class="category">
             <div class="category-header">
-                <h3>دسته‌بندی‌های دیجی‌کالا</h3>
+                <h3>{{categoriesTitle}}</h3>
             </div>
             <div class="category-items-wrapper">
                 <div class="category-item">
@@ -52,7 +52,9 @@
 
 <script>
 export default {
-
+    props: {
+        categoriesTitle: String
+    }
 }
 </script>
 

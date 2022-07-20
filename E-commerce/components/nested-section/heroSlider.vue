@@ -5,37 +5,37 @@
   
             <div class="hero-image" v-on="sliderInterval()">
                 <a>
-                    <img src="../../static/Slider-Images/1.jpg" />
+                    <img src=path1 />
                 </a>
             </div>
             <div class="hero-image">
                 <a>
-                    <img src="../../static/Slider-Images/2.jpg" />
+                    <img :src=path2 />
                 </a>
             </div>
             <div class="hero-image">
                 <a>
-                    <img src="../../static/Slider-Images/3.jpg" />
-                </a>
-            </div>
-            <div class="hero-image" id="slider-image-4">
-                <a>
-                    <img src="../../static/Slider-Images/4.jpg" />
+                    <img :src=path3 />
                 </a>
             </div>
             <div class="hero-image">
                 <a>
-                    <img src="../../static/Slider-Images/5.jpg" />
+                    <img :src=path4 />
                 </a>
             </div>
             <div class="hero-image">
                 <a>
-                    <img src="../../static/Slider-Images/6.jpg" />
+                    <img :src=path5 />
                 </a>
             </div>
             <div class="hero-image">
                 <a>
-                    <img src="../../static/Slider-Images/7.jpg" />
+                    <img :src=path6 />
+                </a>
+            </div>
+            <div class="hero-image">
+                <a>
+                    <img :src=path7 />
                 </a>
             </div>
         </div>
@@ -52,8 +52,19 @@
     export default {
         data(){
             return {
-                heroSlider:[],
+                
             }
+        },
+        props: {
+            mainPageHeroSlider: {
+                path1: '',
+                path2: '',
+                path3: '',
+                path4: '',
+                path5: '',
+                path6: '',
+                path7: '',
+            },
         },
         components:{
             LeftControlHero: () => import('../buttons/leftControlCarousel.vue'),
