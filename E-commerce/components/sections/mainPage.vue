@@ -1,6 +1,14 @@
 <template>
     <div>
-        <HeroSlider mainPageHeroSlider="" />
+        <HeroSlider 
+            :path1="yo.path1"
+            :path2="yo.path2"
+            :path3="yo.path3"
+            :path4="yo.path4"
+            :path5="yo.path5"
+            :path6="yo.path6"
+            :path7="yo.path7"
+        />
         <div class="main-container">
 
             <SubHero />
@@ -87,16 +95,19 @@
 <script>
     export default {
         data() {
-            mainPageHeroSlider: [
-                {path1: '../../static/Slider-Images/1.jpg'},
-                {path2: '../../static/Slider-Images/2.jpg'},
-                {path3: '../../static/Slider-Images/3.jpg'},
-                {path4: '../../static/Slider-Images/4.jpg'},
-                {path5: '../../static/Slider-Images/5.jpg'},
-                {path6: '../../static/Slider-Images/6.jpg'},
-                {path7: '../../static/Slider-Images/7.jpg'},
-            ]
+            return{
+                yo:{
+                    path1: require('@/static/Slider-Images/1.jpg'),
+                    path2: require('@/static/Slider-Images/2.jpg'),
+                    path3: require('@/static/Slider-Images/3.jpg'),
+                    path4: require('@/static/Slider-Images/4.jpg'),
+                    path5: require('@/static/Slider-Images/5.jpg'),
+                    path6: require('@/static/Slider-Images/6.jpg'),
+                    path7: require('@/static/Slider-Images/7.jpg'), 
+                }    
+            }
         },
+        
         name: 'IndexPage',
         components: {
             HeroSlider: () => import ("../nested-section/heroSlider.vue"),

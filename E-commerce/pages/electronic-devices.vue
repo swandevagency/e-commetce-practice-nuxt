@@ -2,7 +2,13 @@
     <div>
         <HeaderPage />
             <div class="electronic-devices-wrapper">
-                <HeroSlider  :mainPageHeroSlider="xo"/>
+                <HeroSlider
+                    :path1="xo.path1"
+                    :path2="xo.path2"
+                    :path3="xo.path3"
+                    :path4="xo.path4"
+                    :path5="xo.path5"
+                />
                 <HotOffers />
                 <Categories categories-title="خرید بر اساس دسته‌بندی" />
 
@@ -32,11 +38,11 @@ export default {
     data() {
         return {
             xo: {
-                path1: '../../static/electronic-devices-page-hero-slider/1.jpg',
-                path2: '../../static/electronic-devices-page-hero-slider/2.jpg',
-                path3: '../../static/electronic-devices-page-hero-slider/3.jpg',
-                path4: '../../static/electronic-devices-page-hero-slider/4.jpg',
-                path5: '../../static/electronic-devices-page-hero-slider/5.jpg',
+                path1: require('@/static/electronic-devices-page-hero-slider/1.jpg'),
+                path2: require('@/static/electronic-devices-page-hero-slider/2.jpg'),
+                path3: require('@/static/electronic-devices-page-hero-slider/3.jpg'),
+                path4: require('@/static/electronic-devices-page-hero-slider/4.jpg'),
+                path5: require('@/static/electronic-devices-page-hero-slider/5.jpg'),
             }
         }
     },

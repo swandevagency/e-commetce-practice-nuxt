@@ -1,9 +1,12 @@
 <template>
     <div class="hot-offers-section">
         <div class="hot-offers">
-        <div @click="hotScroll()">
-            <LeftControl />            
+        <div @click="leftHotScroll()">
+            <LeftControl /> 
         </div>    
+        <div @click="rightHotScroll()">
+            <RightControl />           
+        </div>
             <div class="hot-offers-right-shape">
                 <svg width="92" height="77" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M77.7524 14.9378C77.8003 15.3691 78.1744 15.7052 78.6289 15.7052H84.8224L84.9185 15.7001C85.3603 15.6533 85.7041 15.2876 85.7041 14.844V12.8462L85.699 12.7524C85.6511 12.3209 85.2769 11.9851 84.8224 11.9851L81.9819 11.9853L81.9811 10.8612L81.9759 10.7673C81.928 10.3358 81.5539 10 81.0991 10H78.6291L78.533 10.0051C78.0912 10.0518 77.7474 10.4172 77.7474 10.8612L77.7472 14.844L77.7524 14.9378Z" fill="white"/>
@@ -304,6 +307,7 @@
 </template>
 
 <script>
+
     export default {
         data(){
             return {
@@ -311,17 +315,25 @@
             }
         },
         components:{
-            LeftControl: () => import('../buttons/leftControlCarousel.vue')
+            LeftControl: () => import('../buttons/leftControlCarousel.vue'),
+            RightControl: () => import('../buttons/rightControlCarousel.vue')
         },
         methods:{
-            hotScroll(){
-                gsap.to('.hot-offer-goods-wrapper', {x: '+= 182px', ease: 'none' })
-                const hotOffersCarousel = document.querySelector('.hot-offer-goods-wrapper')
-                const hotOffersCarouselLastItem = [hotOffersCarousel.length - 1]
+            leftHotScroll(){
+                document.querySelector('.right-control-carousel').style.display = 'initial';
+                document.querySelector('.left-control-carousel').style.display = 'none';
                 
-                if (!hotOffersCarouselLastItem ) {
-                    gsap.disable()
-                }
+                gsap.to('.hot-offer-goods-wrapper', {x: 890, ease: 'none' })
+                
+                /* const hotOffersCarousel = document.querySelector('.hot-offer-goods-wrapper')
+                const hotOffersCarouselLastItem = [hotOffersCarousel.length - 1]
+                */
+            },
+            rightHotScroll(){
+                document.querySelector('.right-control-carousel').style.display = 'none';
+                document.querySelector('.left-control-carousel').style.display = 'initial';
+                
+                gsap.to('.hot-offer-goods-wrapper', {x: 0, ease: 'none' })
             }
         }
     }
@@ -457,6 +469,10 @@
 
     .left-control-carousel{
         z-index: 22222;
+    }
+
+    .right-control-carousel{
+        z-index: 22222;    
     }
 
 </style>

@@ -28,11 +28,11 @@
                 </div>
                 <form class="authorization">
                     <div class="signUp-input">
-                        <input type="text" maxlength="11" required/>
+                        <input class="authorizationInput" type="text" required/>
                     </div>
-                    <NuxtLink to="/">
-                        <button>ورود</button>
-                    </NuxtLink>
+                    <a>
+                        <button @click="authorizationButton">ورود</button>
+                    </a>
                 </form>
                 <div class="abc">
                     <p>
@@ -46,7 +46,12 @@
 
 <script>
     export default {
-
+        authorizationButton(){
+            const authorizationInput = document.querySelector('.authorizationInput') 
+            if(!authorizationInput.checkValidity()){
+                return alert('لطفا ایمیل یا تلفن خود را وارد کنید')
+            }
+        }
     }
 </script>
 

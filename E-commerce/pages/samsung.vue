@@ -4,6 +4,8 @@
         
         <GoodsPart />
 
+        <GoodsSection />
+
         <FooterPage />
     </div>
 </template>
@@ -13,6 +15,7 @@
         components: {
             HeaderPage: () => import("@/components/sections/headerPage.vue"),
             GoodsPart: () => import("@/components/goods-pages/goodsTemplate.vue"),
+            // GoodsSection: () => import("@/components/goods-pages/goodsSections.vue"),
             FooterPage: () => import("@/components/sections/footerPage.vue"),   
         }
     }

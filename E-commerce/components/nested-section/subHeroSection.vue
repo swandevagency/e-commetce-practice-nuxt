@@ -61,9 +61,14 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        cursor: pointer;
         img{
             width: 52px;
             height: 52px;
+
+        }
+        img:hover{
+            filter: drop-shadow(1px 1px 3px #00000040);
         }
     }
 
