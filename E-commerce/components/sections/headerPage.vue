@@ -32,6 +32,7 @@
                         <div class="sub-header-main-nav" @mouseenter="dropDownOn()" @mouseleave="dropDownOff()">
                             <HumberMenu />
                             <button>دسته‌بندی کالاها</button>
+                            <span class="sub-header-border-bottom"></span>
                             <div @mousemove="dropDownOn()">
                                 <Classification />
                             </div>
@@ -41,26 +42,34 @@
                             <div class="sub-minor-nav">
                                 <FruitBasket />                                
                                 <a>سوپرمارکت</a>
+                                <span class="sub-header-border-bottom"></span>
                             </div>
                             <div class="sub-minor-nav">
                                 <HotSales />
                                 <a>پرفروش‌ترین‌ها</a>
+                                <span class="sub-header-border-bottom"></span>
                             </div>
                             <div class="sub-minor-nav">
                                 <Discount />
                                 <a>تخفیف‌ها و پیشنهادها</a>
+                                <span class="sub-header-border-bottom"></span>
                             </div>
                             <div class="sub-minor-nav">
                                 <HotSales />
                                 <a>شگفت‌انگیزها</a>
+                                <span class="sub-header-border-bottom"></span>
                             </div>
                         </div> 
 
                         <div class="faq">
                             <a>سوالی دارید؟</a>
+                            <span class="sub-header-border-bottom"></span>
+
                         </div>
                         <div class="salesman">  
                             <a>فروشنده شوید!</a>
+                            <span class="sub-header-border-bottom"></span>
+
                         </div>
                     </div>
                 </nav>
@@ -221,6 +230,8 @@
             margin-right: 10px;
             color: #000;
         }
+    }.header-signup-section:hover{
+        box-shadow: inset 1px 1px 2px #00000030;
     }
 
     .header-cart{
@@ -255,6 +266,12 @@
 
     .sub-header-icon{
         align-items: center;
+    }
+
+    .sub-header-icon:hover{
+        svg{
+            fill: #ef4056;
+        }
     }
 
     .sub-header-main-nav{
@@ -292,36 +309,53 @@
         display: flex;
         flex-flow: row nowrap;
         padding: 0px 0px 7px;
+        position: relative;
+        cursor: pointer;
+        
+    }
+    
+    .sub-header-border-bottom{
+        height: 3px;
+        width: 0%;
+        background-color: #ef4056;
+        position: absolute;
+        bottom: -1px;
+        z-index: 10000000000;
     }
 
-
-    @keyframes header-animation {
-        from {left: 0%;}
-        to {right: 100%;}
-    } 
-    .sub-minor-nav:hover,
-    .sub-header-main-nav:hover,
-    .faq:hover,
-    .salesman:hover{
-        animation: header-animation 3s alternate;;
-        border-bottom: 1px solid red;
+    .sub-minor-nav:hover{
+        span{
+            transition: width 1s;
+            width: 100%;
+        }
     }
- 
+   
     
     .faq{
         margin-left: 20px;
         color:#62666d;
         padding: 0px 0px 7px;
+        position: relative;
     }
 
     .salesman{
         color:#62666d;
         padding: 0px 0px 7px;
+        position: relative;
     }
 
     .header-location-section{
         display: flex;
         flex-flow: row nowrap;
     }
-    
+
+    .header-location-section:hover{
+        svg{
+            fill: #ef4056;
+        }
+    }
+
+    .sub-header-icon{
+        margin-left: 5px;
+    }
 </style>

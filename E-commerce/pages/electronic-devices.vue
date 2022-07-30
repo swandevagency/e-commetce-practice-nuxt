@@ -9,7 +9,13 @@
                     :path4="xo.path4"
                     :path5="xo.path5"
                 />
+
                 <HotOffers />
+                    <nuxtLink to="/samsung">
+                        <h1>
+                            arsam
+                        </h1>
+                    </nuxtLink>
                 <Categories categories-title="خرید بر اساس دسته‌بندی" />
 
                 <div class="electronic-devices-banners-section">
@@ -54,7 +60,7 @@ export default {
         DigiSuggestions: () => import ("@/components/nested-section/digiSuggestions.vue"),
         
         FooterPage: () => import("@/components/sections/footerPage.vue"),
-    },
+    },    
 }
 </script>
 

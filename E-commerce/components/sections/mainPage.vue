@@ -35,23 +35,31 @@
             <Categories categories-title="دسته‌بندی‌های دیجی‌کالا"/>
 
             <div class="category-banner-wrapper topMargin80">
-                <div class="second-category-banner-items">
-                    <img src="../../static/category-banner/5.jpg"/>
-                </div>
-                <div class="second-category-banner-items">
-                    <img src="../../static/category-banner/6.jpg"/>
-                </div>
+                <transition appear @before-enter="beforeEnterRight" @enter="enterRight">
+                    <div class="second-category-banner-items">
+                        <img src="../../static/category-banner/5.jpg"/>
+                    </div>
+                </transition>    
+                <transition appear @before-enter="beforeEnterLeft" @enter="enterLeft"> 
+                    <div class="second-category-banner-items">
+                        <img src="../../static/category-banner/6.jpg"/>
+                    </div>
+                </transition>
             </div>
 
             <DigiSuggestions suggestion-title="پیشنهاد دیجی‌کالا" />
 
             <div class="category-banner-wrapper topMargin30">
-                <div class="second-category-banner-items">
-                    <img src="../../static/category-banner/7.jpg"/>
-                </div>
-                <div class="second-category-banner-items">
-                    <img src="../../static/category-banner/8.jpg"/>
-                </div>
+                <transition appear @before-enter="beforeEnterRight" @enter="enterRight">
+                    <div class="second-category-banner-items">
+                        <img src="../../static/category-banner/7.jpg"/>
+                    </div>
+                </transition>
+                <transition appear @before-enter="beforeEnterLeft" @enter="enterLeft">
+                    <div class="second-category-banner-items">
+                        <img src="../../static/category-banner/8.jpg"/>
+                    </div>
+                </transition>
             </div>
 
             <DigitalCategory />
@@ -120,8 +128,23 @@
             SpecialServices:() => import ("../nested-section/specialServices.vue"),
             DigiClubBanner: () => import ("../nested-section/digiClubBanner.vue"),
 
-        },  
-  }
+        },
+        methods: {
+            beforeEnterRight: (el) => {
+                el.style.transform = 'translateX(1000px)'
+            },
+            enterRight(el){
+                gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
+            },
+
+            beforeEnterLeft: (el) => {
+                el.style.transform = 'translateX(-1000px)'
+            },
+            enterLeft(el){
+                gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
+            },
+        }  
+    }
 </script>
 
 <style lang="scss">

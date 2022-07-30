@@ -106,6 +106,10 @@ export default {
         }
     }
 
+    .banner-goods:hover{
+        box-shadow: 3px 3px 2px #00000030;
+    }
+
     .left-side-banner-wrapper{
         display: flex;
         flex-flow: row nowrap;
