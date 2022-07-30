@@ -79,15 +79,21 @@
                 document.querySelector('.right-control-hero').style.display = 'none';
             },
             sliderOnScrollLeft() {
-                gsap.to('.hero-image', {x: '+=100%', ease: 'none' })
-
-            },
+                // gsap.to('.hero-image', {x: '+=100%', ease: 'none', duration: 2, delay: 2})
+                let tl = gsap.timeline({delay: 1});
+                    tl.to(".hero-image", {x: '+100%', duration:1});                    
+                    
+            },  
             sliderOnScrollRight() {
-                gsap.to('.hero-image', {x: '-=100%', ease: 'none'})
+                let tl = gsap.timeline({delay: 0.5});
+                    tl.to(".hero-image", {x: '0', duration:1});
+                
             },
+
             sliderInterval(){
-                // setInterval(this.sliderOnScrollLeft, 2000); 
+                setInterval(this.sliderOnScrollLeft); 
             },
+
         },
     }
 </script>
