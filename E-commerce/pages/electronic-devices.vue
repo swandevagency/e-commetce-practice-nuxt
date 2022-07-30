@@ -11,7 +11,7 @@
                 />
 
                 <HotOffers />
-                    <nuxtLink to="/samsung">
+                    <nuxtLink to="/electronic-devices/samsung">
                         <h1>
                             arsam
                         </h1>
