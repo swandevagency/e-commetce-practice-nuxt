@@ -9,9 +9,48 @@
                     <div class="color-filter sidebar-shared-style">
                         <div>    
                             <p>رنگ</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
-                            </svg>
+                            <button @click="color = !color">
+                                <div v-if="color">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                                    </svg>
+                                </div>
+                                <div v-else>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+                                    </svg>
+                                </div>
+                            </button>
+                            </div>
+                        <div  v-if="!color" class="drop-down-on">
+                            <div class="sidebar-color-filter-items">
+                                <div class="sidebar-color-filter">
+                                    <input type="checkbox" />
+                                    <p>مشکی</p>
+                                </div>
+                                <span class="color-filter CFblack"></span>
+                            </div>
+                            <div class="sidebar-color-filter-items">
+                                <div class="sidebar-color-filter">
+                                    <input type="checkbox" />
+                                    <p>قرمز</p>
+                                </div>
+                                <span class="color-filter CFred"></span>
+                            </div>
+                            <div class="sidebar-color-filter-items">
+                                <div class="sidebar-color-filter">
+                                    <input type="checkbox" />
+                                    <p>آبی</p>
+                                </div>
+                                <span class="color-filter CFblue"></span>
+                            </div>
+                            <div class="sidebar-color-filter-items">
+                                <div class="sidebar-color-filter">
+                                    <input type="checkbox" />
+                                    <p>صورتی</p>
+                                </div>
+                                <span class="color-filter CFpink"></span>
+                            </div>
                         </div>
 
 
@@ -31,11 +70,24 @@
                                     </g>
                                 </svg>
                             </p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
-                            </svg>
+                            <button @click="add = !add">
+                                <div v-if="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                                    </svg>
+                                </div>
+                                <div v-else>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+                                    </svg>
+                                </div>
+                            </button>
                         </div>
-                        
+                        <div  v-if="!add" class="drop-down-on">
+                            <h1>arsam</h1>
+                            <h1>arsam</h1>
+                            <h1>arsam</h1>
+                        </div>
                         
                     </div>
                     <div class="salesman-post sidebar-shared-style">
@@ -237,7 +289,7 @@
                                 <a>پیشنهاد خریداران</a>
                             </div>
                         </div>
-                        <p>۷۰۱ کالا</p>
+                        <p>۲۰ کالا</p>
                     </div>    
                     <div class="goods-section">
                         <div class="goods-section-items">
@@ -718,17 +770,30 @@ import { stringify } from 'querystring'
     export default {
         data(){
             return{
+                add: true,
+                color: true
                 /* goods: {
                     description:
                          "گوشی موبایل شیائومی مدل Redmi Note 11S 5G 22031116BG دو سیم کارت ظرفیت 128 گیگابایت ...",
                     
                 }*/
+                
             } 
+        },
+
+        methods: {
+            
         },
     }
 </script>
 
-<style lang="scss">
+<style lang="scss"> 
+
+    .drop-down-on{
+        display: flex;
+        flex-direction: column;
+        
+    }
     .whole-page-goods-wrapper{
         padding: 24px;
         width: 100%;
@@ -750,8 +815,10 @@ import { stringify } from 'querystring'
         align-items: flex-start;
         flex-basis: 20%;
         padding: 0px 20px;
+        box-shadow: -1px -1px 2px 0px #00000030, 1px 1px 2px 0px #00000030;
         svg{
             fill: #a1a3a8;
+            cursor: pointer;
         }
         div{
             width: 100%;
@@ -760,6 +827,14 @@ import { stringify } from 'querystring'
             border: none;
         }
 
+        svg:hover{
+            fill: #ef4056;    
+        }
+        button{
+            background: none;
+            outline: none;
+            border: none;
+        }
     }
 
     .sidebar-header{
@@ -769,6 +844,48 @@ import { stringify } from 'querystring'
         }
     }
 
+    .sidebar-color-filter-items{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 15px 10px;
+        border-bottom: 1px solid #f0f0f1;
+    }
+
+    .sidebar-color-filter{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        p{
+            margin-right: 5px;
+        }
+        input{
+            width: 20px;
+            height: 18px;
+            border: 1px solid #00000030;
+        }
+    }
+
+    .color-filter{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .CFblack{
+        background-color: #000;
+    }
+    .CFred{
+        background-color: #f00;
+    }
+    .CFblue{
+        background-color: #00f;
+    }
+    .CFpink{
+        background-color: #f0f;
+    }
+
     .sidebar-shared-style{
         border-bottom: 1px solid #f0f0f1;
         padding: 12px 0px;
@@ -776,7 +893,7 @@ import { stringify } from 'querystring'
             font-size: 1em;
             letter-spacing: 0.1px;
         }
-        div:first-child{
+        >div:first-child{
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
@@ -870,11 +987,17 @@ import { stringify } from 'querystring'
             font-size: 0.8em;
             color: #424750;
             margin-right: 10px;
+            cursor: default;
         }
         a{
             font-size: 0.8em;
             color: #81858b;
             margin-right: 10px;
+        }
+
+        a:hover{
+            color: #ef4056;
+            cursor: pointer;
         }
         
     }

@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div @scroll="handleScroll()" class="bottom-header-section">
+            <div @scroll="handleScroll" class="bottom-header-section">
                 <nav class="navbar">
                     <div class="sub-header-navbar">
                         <div class="sub-header-main-nav" @mouseenter="dropDownOn()" @mouseleave="dropDownOff()">
@@ -102,7 +102,10 @@
 
         methods: {
             handleScroll() {
-                 gsap.fromTo('.bottom-header-section', {x: 100, ease: 'none' },{y: '-= 100%', ease: 'none'})
+                if(gsap.to('.bottom-header-section', {scrollTrigger:'.bottom-header-section' , y : 1000})){
+                    console.log('scrolled')
+                    gsap.to('.bottom-header-section', {y: -1000, ease: 'none'})
+                }
             },
 
             dropDownOn() {
@@ -336,12 +339,20 @@
         color:#62666d;
         padding: 0px 0px 7px;
         position: relative;
+        cursor: pointer;
+        &:hover{
+            color: #ef4056;
+        }
     }
 
     .salesman{
         color:#62666d;
         padding: 0px 0px 7px;
         position: relative;
+        cursor: pointer;
+        &:hover{
+            color: #ef4056;
+        }
     }
 
     .header-location-section{
