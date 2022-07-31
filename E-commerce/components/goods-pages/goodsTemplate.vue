@@ -21,35 +21,35 @@
                                     </svg>
                                 </div>
                             </button>
-                            </div>
+                        </div>
                         <div  v-if="!color" class="drop-down-on">
                             <div class="sidebar-color-filter-items">
                                 <div class="sidebar-color-filter">
                                     <input type="checkbox" />
                                     <p>مشکی</p>
                                 </div>
-                                <span class="color-filter CFblack"></span>
+                                <span class="color-filter-sample CFblack"></span>
                             </div>
                             <div class="sidebar-color-filter-items">
                                 <div class="sidebar-color-filter">
                                     <input type="checkbox" />
                                     <p>قرمز</p>
                                 </div>
-                                <span class="color-filter CFred"></span>
+                                <span class="color-filter-sample CFred"></span>
                             </div>
                             <div class="sidebar-color-filter-items">
                                 <div class="sidebar-color-filter">
                                     <input type="checkbox" />
                                     <p>آبی</p>
                                 </div>
-                                <span class="color-filter CFblue"></span>
+                                <span class="color-filter-sample CFblue"></span>
                             </div>
                             <div class="sidebar-color-filter-items">
                                 <div class="sidebar-color-filter">
                                     <input type="checkbox" />
                                     <p>صورتی</p>
                                 </div>
-                                <span class="color-filter CFpink"></span>
+                                <span class="color-filter-sample CFpink"></span>
                             </div>
                         </div>
 
@@ -87,6 +87,10 @@
                             <h1>arsam</h1>
                             <h1>arsam</h1>
                             <h1>arsam</h1>
+                            <h1>arsam</h1>
+                            <h1>arsam</h1>
+                            <h1>arsam</h1>
+                            <h1>arsam</h1>
                         </div>
                         
                     </div>
@@ -102,11 +106,36 @@
                     <div class="price-range sidebar-shared-style">
                         <div>    
                             <p>محدوده قیمت</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
-                            </svg>
+                            <button @click="price = !price">
+                                <div v-if="price">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                                    </svg>
+                                </div>
+                                <div v-else>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+                                    </svg>
+                                </div>
+                            </button>
                         </div>
-
+                        <div v-if="!price" class="drop-down-on price-filter">
+                            <div class="price-number-input">
+                                <p>از</p>
+                                <input type="number" placeholder="۰"/>
+                            </div>
+                            <div class="price-number-input">
+                                <p>تا</p>
+                                <input type="number" placeholder="۷۶,۹۰۰,۰۰۰"/>
+                            </div>
+                            <div class="price-range-input">
+                                <input type="range" />
+                                <div>
+                                    <p>ارزانترین</p>
+                                    <p>گرانترین</p>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="salesman-post existed-goods sidebar-shared-style">
@@ -771,7 +800,8 @@ import { stringify } from 'querystring'
         data(){
             return{
                 add: true,
-                color: true
+                color: true,
+                price: true,
                 /* goods: {
                     description:
                          "گوشی موبایل شیائومی مدل Redmi Note 11S 5G 22031116BG دو سیم کارت ظرفیت 128 گیگابایت ...",
@@ -850,7 +880,10 @@ import { stringify } from 'querystring'
         justify-content: space-between;
         align-items: center;
         padding: 0px 15px 10px;
+        padding-right: 0px;
         border-bottom: 1px solid #f0f0f1;
+    }.sidebar-color-filter-items:last-child{
+        border: none;
     }
 
     .sidebar-color-filter{
@@ -867,7 +900,7 @@ import { stringify } from 'querystring'
         }
     }
 
-    .color-filter{
+    .color-filter-sample{
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -949,6 +982,58 @@ import { stringify } from 'querystring'
         }
     }
 
+    .price-filter{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .price-number-input{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        input{
+            width: 90%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #e0e0e2;
+            margin-top: 10px;
+            font-size: 1.7em;
+            display: flex;
+            justify-content: flex-start;
+            color: #424750;
+            font-weight: 900;
+            direction: ltr;
+        }
+        & input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    .price-range-input{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        input::-moz-range-thumb{
+            background: #19bfd3;
+        }
+        &>div{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            p{
+                font-size: 0.9em;
+            }
+        }
+    }
+
     .existed-goods-in-warehouse{
         p{
             padding-left: 50px;
@@ -1021,6 +1106,10 @@ import { stringify } from 'querystring'
 
         & >div{
             width: 100%;
+        }
+
+        &:hover{
+            filter: drop-shadow(0 1px 5px rgba(0,0,0,.2));
         }
     }
 
