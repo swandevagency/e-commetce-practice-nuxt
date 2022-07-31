@@ -15,9 +15,6 @@
 
 <script>
 export default {
-    data() {    
-        
-    },
     components: {
         SupportContainer: () => import ('../nested-section/supportContainer.vue'),
     },
