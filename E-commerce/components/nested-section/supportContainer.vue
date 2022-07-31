@@ -58,7 +58,7 @@ export default {
         left: 10px;
         padding: 0px;
         background: #fff;
-        display: none;
+        
     }
     .support-container{
         display: flex;
