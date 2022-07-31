@@ -16,6 +16,7 @@
                             arsam
                         </h1>
                     </nuxtLink>
+                    <nuxtChild />
                 <Categories categories-title="خرید بر اساس دسته‌بندی" />
 
                 <div class="electronic-devices-banners-section">

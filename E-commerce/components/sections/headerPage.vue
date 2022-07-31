@@ -8,7 +8,9 @@
             </div>
             <div class="upper-header-section">
                 <div class="upper-header-section-right">
-                    <img class="header-logo" src="../../static/logo.svg"/>
+                    <nuxtLink class="header-logo-link" to="/">
+                        <img class="header-logo" src="../../static/logo.svg"/>
+                    </nuxtLink>
                     <div class="searchBar">
                         <searchIcon />
                         <input class="header-searchbar-input" placeholder="جستجو" />
@@ -178,6 +180,11 @@
     .header-user-section {
         display: flex;
         flex-flow: row nowrap;
+        align-items: center;
+    }
+
+    .header-logo-link{
+        display: flex;
         align-items: center;
     }
 
