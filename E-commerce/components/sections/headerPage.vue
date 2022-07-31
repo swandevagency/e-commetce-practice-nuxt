@@ -13,7 +13,7 @@
                     </nuxtLink>
                     <div class="searchBar">
                         <searchIcon />
-                        <input class="header-searchbar-input" placeholder="جستجو" />
+                        <input class="header-searchbar-input" placeholder="جستجو" @click="placeholderChanger()"/>
                     </div>
                 </div>
                 <div class="upper-header-section-left">
@@ -123,6 +123,9 @@
                 if (document.body.scrollTop > 500) {
                     document.querySelector(".bottom-header-section").style.display = "none";
                 }
+            },
+            placeholderChanger (){
+                document.querySelector('.header-searchbar-input').placeholder='نام کالای مورد نظر را بنویسید';
             }
         },
         mounted(){
@@ -208,8 +211,9 @@
         color: #81858b;
         font-family: "Iran Yekan";
         font-weight: 400;
-        
-    }  
+        font-size: 1em;
+    }
+
 
     .search-icon-input{
         width: 8%;

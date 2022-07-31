@@ -3,37 +3,37 @@
         
         <div class="hero-section" id="hero-slider">
   
-            <div class="hero-image" v-on="sliderInterval()">
+            <div class="hero-image hero1">
                 <a>
                     <img :src="(`${path1}`)" />
                 </a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image hero2">
                 <a>
                     <img :src="(`${path2}`)" />
                 </a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image hero3">
                 <a>
                     <img :src="(`${path3}`)" />
                 </a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image hero4">
                 <a>
                     <img :src="(`${path4}`)" />
                 </a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image hero5">
                 <a>
                     <img :src="(`${path5}`)" />
                 </a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image hero6">
                 <a>
                     <img :src="(`${path6}`)" />
                 </a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image hero7">
                 <a>
                     <img :src="(`${path7}`)" />
                 </a>
@@ -80,19 +80,26 @@
             },
             sliderOnScrollLeft() {
                 // gsap.to('.hero-image', {x: '+=100%', ease: 'none', duration: 2, delay: 2})
-                let tl = gsap.timeline({delay: 1});
-                    tl.to(".hero-image", {x: '+100%', duration:1});                    
+                let tl = gsap.timeline({repeat: 2, repeatDelay: 1});
+                    tl.to(".hero1", {x: '100%', duration:2, delay:1});                    
+                    tl.to(".hero2", {x: '200%', duration:2, delay:1});                    
+                    tl.to(".hero3", {x: '300%', duration:2, delay:1});                    
+                    tl.to(".hero4", {x: '400%', duration:2, delay:1});                    
+                    tl.to(".hero5", {x: '500%', duration:2, delay:1});                    
+                    tl.to(".hero6", {x: '600%', duration:2, delay:1});                    
+                    tl.to(".hero7", {x: '700%', duration:2, delay:1});
+                                      
                     
             },  
             sliderOnScrollRight() {
-                let tl = gsap.timeline({delay: 0.5});
+                let tl = gsap.timeline({});
                     tl.to(".hero-image", {x: '0', duration:1});
                 
             },
 
-            sliderInterval(){
+            /* sliderInterval(){
                 setInterval(this.sliderOnScrollLeft); 
-            },
+            }, */
 
         },
     }

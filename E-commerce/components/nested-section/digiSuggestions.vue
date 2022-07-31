@@ -110,6 +110,9 @@
                     </a>
                 </div>
             </div>
+            <div @click="SuggestionRightControl">
+                <RightControl />
+            </div>
             <div @click="SuggestionLeftControl">
                 <LeftControl />
             </div>
@@ -120,14 +123,26 @@
 <script>
     export default {
         components:{
-            LeftControl: () => import('../buttons/leftControlCarousel.vue')
+            RightControl: () => import('../buttons/rightControlSuggestion.vue'),
+            LeftControl: () => import('../buttons/leftControlSuggestion.vue'),
         },
         props: {
             suggestionTitle: String
         },
         methods:{
             SuggestionLeftControl(){
-                gsap.to('.suggestion-blocks', {x: '+= 101px', ease: 'none' })
+                document.querySelector('.right-control-suggestion').style.display = 'initial';
+                document.querySelector('.left-control-suggestion').style.display = 'none';
+                
+                let tl = gsap.timeline({});
+                    tl.to(".suggestion-blocks", {x: '+101px'});
+            },
+            SuggestionRightControl(){
+                document.querySelector('.right-control-suggestion').style.display = 'none';
+                document.querySelector('.left-control-suggestion').style.display = 'initial';
+                
+                let tl = gsap.timeline({});
+                    tl.to(".suggestion-blocks", {x: '0px'});
             }
         }
     }
@@ -208,7 +223,11 @@
         }
     }
     
-    .left-control-carousel{
-        top: 54%;
+    // .left-control-carousel{
+        
+    // }
+
+    .right-control-carousel{
+        display: initial;
     }
 </style>
