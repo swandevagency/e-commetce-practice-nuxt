@@ -99,4 +99,13 @@ export default {
             height: 100%;
         }
     }
+
+
+
+    @media only screen and (max-width: 992px){
+        .electronic-devices-wrapper {
+            margin-top: 0px;
+            padding: 0px 0px;
+        }
+    }
 </style>

@@ -31,4 +31,10 @@
       z-index: 2222;
       display: none;
     }
+
+    @media only screen and (max-width: 992px){
+        .right-control-hero{
+            display: none;
+        }
+    }
 </style>

@@ -3,7 +3,7 @@
     <HeaderPage />
 
     <MainPage />
-
+    <!-- todo : header and footer must be handled in layouts -->
     <FooterPage />
   </div>
 </template>

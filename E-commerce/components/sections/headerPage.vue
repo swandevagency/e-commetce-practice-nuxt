@@ -8,6 +8,9 @@
             </div>
             <div class="upper-header-section">
                 <div class="upper-header-section-right">
+                    <div>
+                        
+                    </div>
                     <nuxtLink class="header-logo-link" to="/">
                         <img class="header-logo" src="../../static/logo.svg"/>
                     </nuxtLink>
@@ -404,7 +407,7 @@
         .header-signup-section {
             padding: 0px 15px;
         }
-        
+
         .navbar{
             display: none;
         }
