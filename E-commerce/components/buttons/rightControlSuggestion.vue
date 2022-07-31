@@ -30,4 +30,10 @@
       outline: none;
       display: none;
     }
+
+    @media only screen and (max-width: 992px){
+        .right-control-suggestion{
+            display: none;
+        }
+    }
 </style>

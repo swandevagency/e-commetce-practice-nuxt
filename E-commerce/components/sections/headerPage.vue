@@ -380,4 +380,38 @@
     .sub-header-icon{
         margin-left: 5px;
     }
+
+
+
+
+
+
+
+    @media only screen and (max-width: 992px){
+        .white-space{
+            display: none;
+        }
+        
+        .header-section{
+            display: flex;
+            position: relative;
+        }
+
+        .header-banner img {
+            height: 35px;
+        }
+
+        .header-signup-section {
+            padding: 0px 15px;
+        }
+        
+        .navbar{
+            display: none;
+        }
+
+        .banner-container{
+            display: none;
+        }
+
+    }
 </style>

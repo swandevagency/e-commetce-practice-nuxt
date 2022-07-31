@@ -243,4 +243,43 @@
         }
     }
 
+    @media only screen and (max-width: 992px){
+        .category-banner-wrapper{
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+
+        .first-category-banner-items{
+            flex-basis: 49%;
+        }
+
+        .main-container{
+            margin: 0px 0px;
+        }
+
+        .blog-header{
+            h6{
+                font-size: 0.9em;
+                font-weight: 300;
+            }
+
+            a{
+                font-size: 0.9em;
+            }
+        }
+
+        .blog-items{
+            flex-flow: column;
+        }
+
+        .blog-items-content{
+            margin-bottom: 15px;
+
+            p{
+                font-size: 0.7em;
+            }
+        }
+
+    }
+
 </style>

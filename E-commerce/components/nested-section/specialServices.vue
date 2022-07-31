@@ -181,4 +181,17 @@ export default {
     }
 
 
+    @media only screen and (max-width: 992px){
+        .service-container{
+            flex-flow: column;
+        }
+
+        .service-container-logo-part img {
+            width: 55%;
+            margin-top: -155px;
+            align-self: self-end;
+        }
+    }
+
+
 </style>

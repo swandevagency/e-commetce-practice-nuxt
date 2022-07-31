@@ -133,5 +133,11 @@ export default {
             fill: #39ae00;
             margin-right: 5px;
         }
+
+    }
+    @media only screen and (max-width: 992px){
+        .banner-container{
+            display: none !important;
+        }
     }
 </style>

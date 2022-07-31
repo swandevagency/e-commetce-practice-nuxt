@@ -315,4 +315,36 @@
         }
     }
 
+    @media only screen and (max-width: 992px){
+        .footer-accessibility-section{
+            display: none;
+        }
+
+        .website-map{
+            flex-flow: wrap;
+        }
+
+        .map{
+            flex-basis: 50%;
+        }
+
+        .marketing{
+            flex-basis: 100%;
+        }
+
+        .social-media{
+            align-self: flex-end;
+            margin-top: -30px;
+        }
+
+        .email-marketing input {
+            flex-basis: 93%;
+        }
+
+        .email-marketing button {
+            flex-basis: 6%;
+        }
+        
+    }
+
 </style>

@@ -30,4 +30,11 @@
       outline: none;
       z-index: 2222;
     }
+
+
+    @media only screen and (max-width: 992px){
+        .left-control-suggestion{
+            display: none;
+        }
+    }
 </style>

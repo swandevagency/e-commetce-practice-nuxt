@@ -140,4 +140,16 @@
     // .left-control-carousel{
     //     background: #000;
     // }
+
+
+
+    @media only screen and (max-width: 992px){
+        .hero-image {
+            height: 268px;
+        }
+
+        .hero-section{
+            border-radius: 0px;
+        }
+    }
 </style>

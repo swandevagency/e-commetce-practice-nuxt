@@ -223,11 +223,20 @@
         }
     }
     
-    // .left-control-carousel{
-        
-    // }
 
-    .right-control-carousel{
-        display: initial;
+
+
+
+    @media only screen and (max-width: 992px){
+        .suggestion-blocks-wrapper{
+            border: none;
+            
+            & >div:last-child{
+                display: none;
+            }
+
+        } 
     }
+
+
 </style>

@@ -81,4 +81,20 @@ export default {
         align-items: center;
         justify-content: center;
     }
+
+
+
+
+    @media only screen and (max-width: 992px){
+        
+        .sub-hero-section{
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+
+        .sub-hero-items{
+            flex-basis: 25%;
+        }
+
+    }
 </style>

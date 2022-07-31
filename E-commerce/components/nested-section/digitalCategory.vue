@@ -188,4 +188,28 @@ export default {
         }
     }
 
+
+
+
+
+    @media only screen and (max-width: 992px){ 
+        .digital-category-container{
+            flex-flow: wrap;
+        }    
+
+        .digital-category-part{
+            flex-basis: 100%;
+        }
+
+        .digital-category-items{
+            img{
+                padding: 60px;
+            }    
+        }
+
+        .digital-category-container{
+            padding: 0px;
+        }
+    }
+
 </style>
