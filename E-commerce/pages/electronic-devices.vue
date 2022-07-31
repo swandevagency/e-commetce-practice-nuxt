@@ -1,6 +1,5 @@
 <template>
     <div>
-        <HeaderPage />
             <div class="electronic-devices-wrapper">
                 <HeroSlider
                     :path1="xo.path1"
@@ -36,7 +35,6 @@
 
                 <DigiSuggestions suggestion-title="دسته‌بندی‌های پیشنهادی"/>
             </div>
-        <FooterPage />
     </div>
 </template>
 
@@ -54,13 +52,11 @@ export default {
         }
     },
     components: {
-        HeaderPage: () => import("@/components/sections/headerPage.vue"),
-        HeroSlider: () => import ("@/components/nested-section/heroSlider.vue"),
-        HotOffers:() => import ("@/components/nested-section/hotOffers.vue"),
-        Categories:() => import ("@/components/nested-section/categories.vue"),
-        DigiSuggestions: () => import ("@/components/nested-section/digiSuggestions.vue"),
+        HeroSlider: () => import ("@/components/homeComponents/heroSlider.vue"),
+        HotOffers:() => import ("@/components/homeComponents/hotOffers.vue"),
+        Categories:() => import ("@/components/homeComponents/categories.vue"),
+        DigiSuggestions: () => import ("@/components/homeComponents/digiSuggestions.vue"),
         
-        FooterPage: () => import("@/components/sections/footerPage.vue"),
     },    
 }
 </script>

@@ -68,7 +68,7 @@ export default {
 
         }
         img:hover{
-            filter: drop-shadow(1px 1px 3px #00000040);
+            filter: drop-shadow(3px 3px 5px #00000040);
         }
     }
 

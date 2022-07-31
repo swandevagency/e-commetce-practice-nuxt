@@ -5,6 +5,10 @@
           box-sizing: border-box;
   direction: rtl;
 }
+/* todo: always always always define the breakpoints as scss variables */
+/* todo: always always always define the colors as scss variables */
+/* todo: always always always define the font sizes as scss variables */
+/* todo: always always always define font related styles for all the different breakpoints and the only style that you are allowed to give to your elements in components are font sizes based on em and rem*/
 
 @font-face {
   font-family: "Iran Yekan";
