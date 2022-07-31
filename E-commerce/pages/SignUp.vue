@@ -155,4 +155,19 @@
             font-size: 12px;
         }
     }
+
+    @media only screen and (max-width: 992px){
+        .signup-container{
+            border: none;
+        }
+
+        .signUp-input{
+            background: #f0f0f1;
+            border: none;
+            border-bottom: 2px solid #19bfd3;
+            input{
+                background: #f0f0f1;
+            }
+        }
+    }
 </style>
