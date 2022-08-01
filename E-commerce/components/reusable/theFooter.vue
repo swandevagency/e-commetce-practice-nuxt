@@ -1,18 +1,3 @@
-<script>
-    export default {
-        components: {
-            Support: () => import("../nested-section/support.vue")
-        },
-        methods:{
-            onScroll(){
-                document.querySelector('#onScroll').scrollIntoView({
-                    behavior: 'smooth',
-                });
-            }
-        }
-    }
-</script>
-
 <template>
     <div>
         <div>
@@ -170,7 +155,17 @@
         <Support />
     </div>
 </template>
-
+<script>
+    export default {  
+        methods:{
+            onScroll(){
+                document.querySelector('#onScroll').scrollIntoView({
+                    behavior: 'smooth',
+                });
+            }
+        }
+    }
+</script>
 <style lang="scss">
     .footer-section{
         width: 100%;

@@ -12,6 +12,7 @@
         components:{
             TheHeader: () => import("@/components/reusable/theHeader.vue"),
             TheFooter: () => import("@/components/reusable/theFooter.vue"),
+            TheFooter: () => import("@/components/reusable/support.vue"),
         }       
     }
 </script>
