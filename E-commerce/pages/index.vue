@@ -18,50 +18,21 @@
 
             <banner />
 
-            <!-- <div class="category-banner-wrapper">
-                <div class="first-category-banner-items">
-                    <img src="../../static/category-banner/1.gif"/>
-                </div>
-                <div class="first-category-banner-items">
-                    <img src="../../static/category-banner/2.jpg"/>
-                </div>
-                <div class="first-category-banner-items">
-                    <img src="../../static/category-banner/3.jpg"/>
-                </div>
-                <div class="first-category-banner-items">
-                    <img src="../../static/category-banner/4.jpg"/>
-                </div>
-            </div>
- -->
+            <CategoryBanner />
+
             <Categories categories-title="دسته‌بندی‌های دیجی‌کالا"/>
-<!-- 
-            <div class="category-banner-wrapper topMargin80">
-                <transition appear @before-enter="beforeEnterRight" @enter="enterRight">
-                    <div class="second-category-banner-items">
-                        <img src="../../static/category-banner/5.jpg"/>
-                    </div>
-                </transition>    
-                <transition appear @before-enter="beforeEnterLeft" @enter="enterLeft"> 
-                    <div class="second-category-banner-items">
-                        <img src="../../static/category-banner/6.jpg"/>
-                    </div>
-                </transition>
-            </div> -->
+
+            <DiscountBanner 
+                :bannerPath1="xo.bannerPath1"
+                :bannerPath2="xo.bannerPath2"
+            />
 
             <DigiSuggestions suggestion-title="پیشنهاد دیجی‌کالا" />
 
-            <!-- <div class="category-banner-wrapper topMargin30">
-                <transition appear @before-enter="beforeEnterRight" @enter="enterRight">
-                    <div class="second-category-banner-items">
-                        <img src="../../static/category-banner/7.jpg"/>
-                    </div>
-                </transition>
-                <transition appear @before-enter="beforeEnterLeft" @enter="enterLeft">
-                    <div class="second-category-banner-items">
-                        <img src="../../static/category-banner/8.jpg"/>
-                    </div>
-                </transition>
-            </div> -->
+            <DiscountBanner 
+                :bannerPath1="xo.bannerPath3"
+                :bannerPath2="xo.bannerPath4"
+            />
 
             <DigitalCategory />
 
@@ -88,7 +59,14 @@
                     path5: require('@/static/Slider-Images/5.jpg'),
                     path6: require('@/static/Slider-Images/6.jpg'),
                     path7: require('@/static/Slider-Images/7.jpg'), 
-                }    
+                },
+                xo:{
+                    bannerPath1: require('@/static/category-banner/5.jpg'),
+                    bannerPath2: require('@/static/category-banner/6.jpg'),
+                    bannerPath3: require('@/static/category-banner/7.jpg'),
+                    bannerPath4: require('@/static/category-banner/8.jpg'),
+                    
+                }
             }
         },
         
@@ -103,24 +81,11 @@
             DigitalCategory: () => import ("../components/homeComponents/digitalCategory.vue"),
             SpecialServices:() => import ("../components/homeComponents/specialServices.vue"),
             DigiClubBanner: () => import ("../components/homeComponents/digiClubBanner.vue"),
-            BlogSections:() => import ("../components/homeComponents/blog.vue")
+            BlogSections:() => import ("../components/homeComponents/blog.vue"),
+            DiscountBanner:() => import ("../components/homeComponents/discountBanners.vue"),
+            CategoryBanner:() => import ("../components/homeComponents/categoryBanner.vue")
 
-        },
-        methods: {
-            beforeEnterRight: (el) => {
-                el.style.transform = 'translateX(1000px)'
-            },
-            enterRight(el){
-                gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
-            },
-
-            beforeEnterLeft: (el) => {
-                el.style.transform = 'translateX(-1000px)'
-            },
-            enterLeft(el){
-                gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
-            },
-        }  
+        }, 
     }
 </script>
 
@@ -130,50 +95,9 @@
         padding: 0px 16px;
     }
 
-    .category-banner-wrapper{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 25px;
-        overflow: hidden;
-    }
-
-    .first-category-banner-items{
-        width:24%;
-        margin-top: 0px;
-        img{
-            width:100%;
-            border-radius: 16px;
-            object-fit: cover;
-        }
-    }
-
-    .topMargin80{
-        margin-top: 80px;
-    }
-
-    .second-category-banner-items{
-        width:calc(49% + 4px);
-        margin-top: 0px;
-        img{
-            width:100%;
-            border-radius: 16px;
-            object-fit: cover;
-        }
-    }
-
-    .topMargin30{
-        margin-top:30px
-    }
 
 
     @media only screen and (max-width: 992px){
-        .category-banner-wrapper{
-            flex-wrap: wrap;
-            row-gap: 10px;
-        }
-
         .first-category-banner-items{
             flex-basis: 49%;
         }
