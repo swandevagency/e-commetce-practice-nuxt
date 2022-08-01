@@ -20,6 +20,7 @@
       height: 40px;
       background-color: #fff;
       border-radius: 50%;
+      cursor: pointer;
       position: absolute;
       left: 1%;
       top: 45%;
