@@ -95,8 +95,6 @@
         padding: 0px 16px;
     }
 
-
-
     @media only screen and (max-width: 992px){
         .first-category-banner-items{
             flex-basis: 49%;
