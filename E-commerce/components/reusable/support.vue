@@ -24,7 +24,7 @@ export default {
         }
     },
     components: {
-        SupportContainer: () => import ('../nested-section/supportContainer.vue'),
+        SupportContainer: () => import ('../containers/supportContainer.vue'),
     },
     methods: {
         support(){

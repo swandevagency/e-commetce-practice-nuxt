@@ -101,8 +101,7 @@
             Discount: () => import ('../icons/discount'),
             Awesome: () => import ('../icons/awesome'),
             Location: () => import ('../icons/location.vue'),
-            Classification: () => import ('../../components/nested-section/classification.vue'),
-        
+            Classification: () => import ('../../components/containers/classification.vue'),
         },
 
         methods: {
@@ -139,6 +138,7 @@
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/color.scss";
 
     .white-space{
         height: 173px;
@@ -342,11 +342,15 @@
 
     .sub-minor-nav:hover{
         span{
-            transition: width 1s;
             width: 100%;
+            animation-name: example;
+            animation-duration: 1s;
         }
     }
-   
+    @keyframes example {
+        0% {opacity: 0%;}
+        100% {opacity: 100%;}
+    }
     
     .faq{
         margin-left: 20px;
