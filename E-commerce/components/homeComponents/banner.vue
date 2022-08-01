@@ -101,6 +101,7 @@ export default {
         padding: 8px;
         overflow: hidden;
         margin-left: 10px;
+        cursor: pointer;
         img{
             width: 100%;
         }
@@ -123,6 +124,7 @@ export default {
         background-color: #fff;
         padding: 8px 23px;
         border-radius: 30px;
+        cursor: pointer;
 
         p{
             color: #39ae00;

@@ -164,6 +164,7 @@
         h3{
             font-size:1.5em;
             font-weight: 500;
+            cursor: default;
         }
     }
 
@@ -196,6 +197,7 @@
         flex-direction: column;
         align-items: center;
         padding: 15px;
+        cursor: pointer;
 
         p{
             font-size: 1.1em;

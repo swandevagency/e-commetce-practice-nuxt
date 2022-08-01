@@ -146,11 +146,13 @@ export default {
             background-color: #fff;
             font-size: 1.1em;
             font-weight: 400;
+            cursor: default;
         }
         p{
             padding: 0px 25px;
             padding-bottom: 5px;
-            background-color: #fff
+            cursor: default;
+            background-color: #fff;
         }
     }
 
@@ -169,6 +171,7 @@ export default {
         img{
             width: 100%;
             margin-bottom: 0px;
+            cursor: pointer;
         }
 
     }
@@ -181,7 +184,7 @@ export default {
         align-items: center;
         justify-content: center;
         padding: 10px 0px 20px;
-
+        cursor: pointer;
         svg{
             fill: #19bfd3;
             margin-right: 5px

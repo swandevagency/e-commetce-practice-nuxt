@@ -34,6 +34,7 @@
     .first-category-banner-items{
         width:24%;
         margin-top: 0px;
+        cursor: pointer;
         img{
             width:100%;
             border-radius: 16px;

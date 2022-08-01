@@ -110,10 +110,11 @@ export default {
             margin-top: -25px;  
         }
 
-        p{
+        >p{
             color: #fff;
             font-size: 1em;
-            margin-bottom: 20px
+            margin-bottom: 20px;
+            cursor: default;
         }
     }
 
@@ -125,8 +126,14 @@ export default {
         color: #fff;
         border-radius: 8px;
         border: 1px solid #fff;
+        cursor: pointer;
+
+        span{
+            cursor: pointer;
+        }
         svg{
             margin-right: 8px;
+            cursor: pointer;
         }
     }
 
@@ -147,7 +154,8 @@ export default {
         flex-basis:10%;
         padding: 16px 10px;
         p{
-            font-size:1.1em
+            font-size:1.1em;
+            cursor: default;
         }
         div{
             display: flex;
@@ -155,6 +163,7 @@ export default {
             align-items: center;
             svg{
                 margin:0px 7px;
+                cursor: pointer;
             }
         }
 
@@ -177,6 +186,7 @@ export default {
         padding: 10px;
         img{
             width: 100%;
+            cursor: pointer;
         }
     }
 

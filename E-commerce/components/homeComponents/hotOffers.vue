@@ -418,6 +418,7 @@
         img{
             width: 150px;
             height: 150px;
+            cursor: pointer;
         }
     }
 

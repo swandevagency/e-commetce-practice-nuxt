@@ -97,6 +97,7 @@ export default {
         }
     }
     .digiClub-banner-items{
+        cursor: pointer;
         div{
             align-items: center;
         }

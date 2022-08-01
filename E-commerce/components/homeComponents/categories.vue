@@ -72,6 +72,7 @@ export default {
         h3{
             font-size:1.5em;
             font-weight: 500;
+            cursor: default;
         }
     }
 
@@ -89,8 +90,10 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        cursor: pointer;
         img{
             width: 100%;
+
         }
     }
     .category-item:hover{
