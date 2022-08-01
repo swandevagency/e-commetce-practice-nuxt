@@ -144,6 +144,7 @@ export default {
         background-color: #fff;
         border-radius: 16px;
         padding: 0px 16px;
+        box-shadow: 3px 3px 3px #00000050
     }
 
     .service-container-goods-header{
