@@ -55,11 +55,13 @@ export default {
 
         h6{
             font-size: 1.2em;
+            cursor: default;
         }
 
         a{
             font-size: 1.1em;
             color: #19bfd3;
+            cursor: pointer;
         }
     }
 
@@ -75,6 +77,7 @@ export default {
         flex-basis: 24%;
         border-radius: 16px;
         border: 1px solid #e0e0e2;
+        cursor: pointer;
         img{
             width: 100%;
             border-radius: 16px 16px 0px 0px;
@@ -89,8 +92,12 @@ export default {
             font-weight: 100;
         }
 
-
     }
+
+    .blog-items-content:hover{
+        box-shadow: 3px 4px 5px 0px #00000050
+    }
+
     @media only screen and (max-width: 992px){
         
         .blog-header{
