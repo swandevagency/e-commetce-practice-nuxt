@@ -119,6 +119,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/color.scss";
     .digital-category-section-wrapper{
         width: 100%;
         margin: 50px 0px 25px;
@@ -126,7 +127,7 @@ export default {
 
     .digital-category-container{
         width: 100%;
-        background-color: #f0f0f1;
+        background-color: $border-color;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;

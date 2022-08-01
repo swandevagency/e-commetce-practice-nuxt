@@ -150,6 +150,7 @@
 
 
 <style lang="scss">
+@import "@/assets/scss/color.scss";
     .suggestions-section-wrapper{
         width: 100%;
         display: flex;
@@ -171,7 +172,7 @@
     .suggestion-blocks-wrapper{
         width: 100%;
         border-radius: 16px;
-        border:1px solid #e0e0e247;
+        border:1px solid $border-color;
         display: flex;
         flex-flow: row nowrap;
         overflow-x: scroll;
@@ -187,7 +188,7 @@
         align-items: center;
         justify-content: center;
         width: 16.6%;
-        border:1px solid #e0e0e247;
+        border:1px solid $border-color;
         padding: 0px 43px;
     }
 
@@ -206,14 +207,14 @@
     }
 
     .sugg-border-bottom{
-        border-bottom:1px solid #e0e0e292;
+        border-bottom:1px solid $border-color;
     }
 
     .suggestion-item-background{
         width: 84px;
         height: 84px;
         border-radius: 50%;
-        background-color: #f0f0f1;
+        background-color: $border-color;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -237,7 +238,8 @@
                 display: none;
             }
 
-        } 
+        }
+        
     }
 
 

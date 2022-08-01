@@ -340,8 +340,9 @@
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/color.scss";
     .hot-offers-section{
-        background-color: #ef4056;
+        background-color: $first-color;
         border-radius: 16px;
         padding: 20px 12px 20px 3px;
         position: relative;
@@ -433,7 +434,7 @@
         justify-content: space-between;
         align-items: center;
         div:first-child{
-            background-color: #ef394e;
+            background-color: $first-color;
             border-radius: 16px;
             padding: 0px 10px;
             line-height: 17px;

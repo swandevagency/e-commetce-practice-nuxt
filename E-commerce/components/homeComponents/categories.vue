@@ -110,26 +110,33 @@ export default {
     }
 
     @-webkit-keyframes flip-vertical-right {
-    0% {
-        -webkit-transform: rotateY(0);
-                transform: rotateY(0);
-    }
-    100% {
-        -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg);
-    }
+        0% {
+            -webkit-transform: rotateY(0);
+                    transform: rotateY(0);
+        }
+        100% {
+            -webkit-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+        }
     }
     @keyframes flip-vertical-right {
-    0% {
-        -webkit-transform: rotateY(0);
-                transform: rotateY(0);
-    }
-    100% {
-        -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg);
-    }
+        0% {
+            -webkit-transform: rotateY(0);
+                    transform: rotateY(0);
+        }
+        100% {
+            -webkit-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+        }
     }
 
 
-
+    @media only screen and (max-width: 992px){
+        .category-item {
+            flex-basis: 21%;
+        }
+        .category-item img {
+            width: 60%;
+        }
+    }
 </style>

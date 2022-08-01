@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/color.scss";
     .blog-section{
         display: flex;
         flex-direction: column;
@@ -60,7 +61,7 @@ export default {
 
         a{
             font-size: 1.1em;
-            color: #19bfd3;
+            color: $more-content-color;
             cursor: pointer;
         }
     }
@@ -95,7 +96,7 @@ export default {
     }
 
     .blog-items-content:hover{
-        box-shadow: 3px 4px 5px 0px #00000050
+        box-shadow: 3px 4px 5px 0px #00000050;
     }
 
     @media only screen and (max-width: 992px){

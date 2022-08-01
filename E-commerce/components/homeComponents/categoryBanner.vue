@@ -40,11 +40,20 @@
             border-radius: 16px;
             object-fit: cover;
         }
+
+        & img:hover{
+            -ms-transform: skewX(-5deg); /* IE 9 */
+            transform: skewX(-5deg);
+        }
     }
 
     @media only screen and (max-width: 992px){
         .first-category-banner-items{
             flex-basis: 49%;
+        }
+
+        .category-banner-wrapper{
+                flex-flow: wrap;
         }
     }    
 </style>

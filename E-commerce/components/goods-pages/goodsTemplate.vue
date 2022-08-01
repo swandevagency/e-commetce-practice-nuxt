@@ -818,6 +818,7 @@ import { stringify } from 'querystring'
 </script>
 
 <style lang="scss"> 
+@import "@/assets/scss/color.scss";
 
     .drop-down-on{
         display: flex;
@@ -881,7 +882,7 @@ import { stringify } from 'querystring'
         align-items: center;
         padding: 0px 15px 10px;
         padding-right: 0px;
-        border-bottom: 1px solid #f0f0f1;
+        border-bottom: 1px solid $border-color;
     }.sidebar-color-filter-items:last-child{
         border: none;
     }
@@ -920,7 +921,7 @@ import { stringify } from 'querystring'
     }
 
     .sidebar-shared-style{
-        border-bottom: 1px solid #f0f0f1;
+        border-bottom: 1px solid $border-color;
         padding: 12px 0px;
         p{
             font-size: 1em;
@@ -1052,7 +1053,7 @@ import { stringify } from 'querystring'
     }
 
     .goods-sorting-wrapper{
-        border-bottom: 1px solid #e0e0e2;
+        border-bottom: 1px solid $border-color;
         padding: 10px 0px;
         display: flex;
         flex-flow: row nowrap;
@@ -1091,7 +1092,7 @@ import { stringify } from 'querystring'
         width: 100%;
         display: flex;
         flex-flow: row wrap;
-        background-color: #f0f0f1;
+        background-color: $border-color;
         column-gap: 1px;
         row-gap: 1px;
     }
