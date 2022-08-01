@@ -1,9 +1,13 @@
 <template>
     <div class="hero-section-wrapper" @mouseenter="heroButtonOn" @mouseleave="heroButtonOff">
         
-        <div class="hero-section" id="hero-slider">
-  
-            <div class="hero-image hero1">
+        <div class="hero-section" id="hero-slider" v-if="paths">
+            <div class="hero-image" v-for="path in paths" :key="path.id">
+                <a>
+                    <img :src="path.path">
+                </a>
+            </div>
+            <!-- <div class="hero-image hero1">
                 <a>
                     <img :src="(`${path1}`)" />
                 </a>
@@ -37,7 +41,7 @@
                 <a>
                     <img :src="(`${path7}`)" />
                 </a>
-            </div>
+            </div> -->
         </div>
         <div @click="sliderOnScrollLeft">
             <LeftControlHero />
@@ -55,15 +59,7 @@
                   
             }
         },
-        props: [
-            'path1',
-            'path2',
-            'path3',
-            'path4',
-            'path5',
-            'path6',
-            'path7',
-        ],
+        props: ['paths'],
         components:{
             LeftControlHero: () => import('../buttons/leftSliderButton.vue'),
             RightControlHero: () => import('../buttons/rightSliderButton.vue'),

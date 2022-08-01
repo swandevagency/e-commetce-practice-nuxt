@@ -2,11 +2,7 @@
     <div>
             <div class="electronic-devices-wrapper">
                 <HeroSlider
-                    :path1="xo.path1"
-                    :path2="xo.path2"
-                    :path3="xo.path3"
-                    :path4="xo.path4"
-                    :path5="xo.path5"
+                    :paths="yo"
                 />
 
                 <HotOffers />
@@ -97,13 +93,13 @@ export default {
     data() {
         return {
             moreContent:true,
-            xo: {
-                path1: require('@/static/electronic-devices-page-hero-slider/1.jpg'),
-                path2: require('@/static/electronic-devices-page-hero-slider/2.jpg'),
-                path3: require('@/static/electronic-devices-page-hero-slider/3.jpg'),
-                path4: require('@/static/electronic-devices-page-hero-slider/4.jpg'),
-                path5: require('@/static/electronic-devices-page-hero-slider/5.jpg'),
-            }
+            yo: [
+                {path: require('@/static/electronic-devices-page-hero-slider/1.jpg')},
+                {path: require('@/static/electronic-devices-page-hero-slider/2.jpg')},
+                {path: require('@/static/electronic-devices-page-hero-slider/3.jpg')},
+                {path: require('@/static/electronic-devices-page-hero-slider/4.jpg')},
+                {path: require('@/static/electronic-devices-page-hero-slider/5.jpg')},
+            ]
         }
     },
     components: {

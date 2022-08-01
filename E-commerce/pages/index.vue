@@ -1,13 +1,7 @@
 <template>
     <div>
         <HeroSlider 
-            :path1="yo.path1"
-            :path2="yo.path2"
-            :path3="yo.path3"
-            :path4="yo.path4"
-            :path5="yo.path5"
-            :path6="yo.path6"
-            :path7="yo.path7"
+            :paths="yo"
         />
         
         <div class="main-container">
@@ -51,15 +45,15 @@
     export default {
         data() {
             return{
-                yo:{
-                    path1: require('@/static/Slider-Images/1.jpg'),
-                    path2: require('@/static/Slider-Images/2.jpg'),
-                    path3: require('@/static/Slider-Images/3.jpg'),
-                    path4: require('@/static/Slider-Images/4.jpg'),
-                    path5: require('@/static/Slider-Images/5.jpg'),
-                    path6: require('@/static/Slider-Images/6.jpg'),
-                    path7: require('@/static/Slider-Images/7.jpg'), 
-                },
+                yo:[
+                    {path: require('@/static/Slider-Images/1.jpg')},
+                    {path: require('@/static/Slider-Images/2.jpg')},
+                    {path: require('@/static/Slider-Images/3.jpg')},
+                    {path: require('@/static/Slider-Images/4.jpg')},
+                    {path: require('@/static/Slider-Images/5.jpg')},
+                    {path: require('@/static/Slider-Images/6.jpg')},
+                    {path: require('@/static/Slider-Images/7.jpg')}, 
+                ],
                 xo:{
                     bannerPath1: require('@/static/category-banner/5.jpg'),
                     bannerPath2: require('@/static/category-banner/6.jpg'),
