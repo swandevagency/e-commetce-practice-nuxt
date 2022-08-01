@@ -1,5 +1,8 @@
-$base-color: #ef4056;
+@import "@/assets/scss/color.scss";
 
+body{
+    font-size: 16px;
+}
 
 *{
     margin: 0;
