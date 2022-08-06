@@ -48,12 +48,20 @@
 
 <script>
     export default {
-        authorizationButton(){
-            const authorizationInput = document.querySelector('.authorizationInput') 
-            if(!authorizationInput.checkValidity()){
-                return alert('لطفا ایمیل یا تلفن خود را وارد کنید')
+        data(){
+            return {
+
             }
-        }
+        },
+        layout: 'empty',
+        methods: {
+            authorizationButton(){
+                const authorizationInput = document.querySelector('.authorizationInput') 
+                if(!authorizationInput.checkValidity()){
+                    return alert('لطفا ایمیل یا تلفن خود را وارد کنید')
+                }
+            }
+        },
     }
 </script>
 
