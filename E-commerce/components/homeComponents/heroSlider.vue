@@ -7,41 +7,6 @@
                     <img :src="path.path">
                 </a>
             </div>
-            <!-- <div class="hero-image hero1">
-                <a>
-                    <img :src="(`${path1}`)" />
-                </a>
-            </div>
-            <div class="hero-image hero2">
-                <a>
-                    <img :src="(`${path2}`)" />
-                </a>
-            </div>
-            <div class="hero-image hero3">
-                <a>
-                    <img :src="(`${path3}`)" />
-                </a>
-            </div>
-            <div class="hero-image hero4">
-                <a>
-                    <img :src="(`${path4}`)" />
-                </a>
-            </div>
-            <div class="hero-image hero5">
-                <a>
-                    <img :src="(`${path5}`)" />
-                </a>
-            </div>
-            <div class="hero-image hero6">
-                <a>
-                    <img :src="(`${path6}`)" />
-                </a>
-            </div>
-            <div class="hero-image hero7">
-                <a>
-                    <img :src="(`${path7}`)" />
-                </a>
-            </div> -->
         </div>
         <div @click="sliderOnScrollLeft">
             <LeftControlHero />

@@ -334,7 +334,7 @@
     .sub-header-border-bottom{
         height: 3px;
         width: 0%;
-        background-color: #ef4056;
+        background-color: $first-color;
         position: absolute;
         bottom: -1px;
         z-index: 10000000000;
@@ -359,7 +359,7 @@
         position: relative;
         cursor: pointer;
         &:hover{
-            color: #ef4056;
+            color: $first-color;
         }
     }
 
