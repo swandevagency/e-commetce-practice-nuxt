@@ -21,10 +21,10 @@
                 </div>
                 <div class="upper-header-section-left">
                     <div class="header-user-section">
-                        <div to="/SignUp" class="header-signup-section">
+                        <nuxtLink to="/SignUp" class="header-signup-section">
                             <SignInIcon />
-                            <NuxtLink to="/SignUp" class="signup">ورود | ثبت‌نام</NuxtLink>
-                        </div>
+                            <a class="signup">ورود | ثبت‌نام</a>
+                        </nuxtLink>
                         <div class="header-cart">
                             <CartIcon />
                         </div>
@@ -246,6 +246,7 @@
         a{
             margin-right: 10px;
             color: #000;
+            font-size: 1em;
         }
     }.header-signup-section:hover{
         box-shadow: inset 1px 1px 2px #00000030;
