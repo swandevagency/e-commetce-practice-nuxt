@@ -152,7 +152,6 @@
                 </div>
             </div>
         </div>
-        <Support />
     </div>
 </template>
 <script>

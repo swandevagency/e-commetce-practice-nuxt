@@ -344,7 +344,7 @@
         span{
             width: 100%;
             animation-name: example;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
         }
     }
     @keyframes example {
