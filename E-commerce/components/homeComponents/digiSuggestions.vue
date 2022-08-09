@@ -206,6 +206,10 @@
         }
     }
 
+    .suggestion-item:hover{
+        box-shadow: inset 0px 0px 5px #00000030;
+    }
+
     .sugg-border-bottom{
         border-bottom:1px solid $border-color;
     }
