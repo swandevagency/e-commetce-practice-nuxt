@@ -107,4 +107,12 @@ export default {
             margin-right: 10px;
         }
     }
+
+
+
+     @media only screen and (max-width: 992px){
+        .digiClub-banner{
+            display: none;
+        }
+     }
 </style>

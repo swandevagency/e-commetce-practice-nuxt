@@ -37,4 +37,19 @@
             display: none;
         }
     }
+    @media only screen and (max-width: 768px){
+        .left-control-hero{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 576px){
+        .left-control-hero{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 360px){
+        .left-control-hero{
+            display: none;
+        }
+    }
 </style>

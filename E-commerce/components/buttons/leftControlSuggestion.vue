@@ -38,4 +38,20 @@
             display: none;
         }
     }
+    @media only screen and (max-width: 768px){
+        .left-control-suggestion{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 576px){
+        .left-control-suggestion{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 360px){
+        .left-control-suggestion{
+            display: none;
+        }
+    }
+
 </style>

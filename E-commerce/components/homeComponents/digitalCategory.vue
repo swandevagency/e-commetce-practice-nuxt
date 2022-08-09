@@ -216,4 +216,37 @@ export default {
         }
     }
 
+    @media only screen and (max-width: 768px){
+        .digital-category-items img{
+            padding: 0;
+        }
+    }
+
+
+    @media only screen and (max-width: 576px){
+        .digital-category-items img {
+            padding: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 360px){
+        .digital-category-items img {
+            padding: 0px;
+        }
+
+        .service-container-goods-picture {
+            flex-basis: 50%;
+        }
+
+        .service-container-goods-picture {
+            flex-basis: 50%;
+            font-size: 0.8em;
+        }
+
+        .map {
+            flex-basis: 100%;
+            margin-top: 25px;
+        }
+    }
+
 </style>

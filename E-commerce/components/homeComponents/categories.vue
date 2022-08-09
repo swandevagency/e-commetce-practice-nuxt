@@ -91,6 +91,7 @@ export default {
         flex-direction: column;
         align-items: center;
         cursor: pointer;
+        text-align: center;
         img{
             width: 100%;
 
@@ -131,6 +132,43 @@ export default {
         }
         .category-item img {
             width: 60%;
+        }
+    }
+
+    @media only screen and (max-width: 768px){
+        .category-item{
+            p{
+                font-size: 0.9em;
+            }
+
+            img{
+                width: 100%;
+            }
+        } 
+        
+    }
+
+    @media only screen and (max-width: 576px){
+        .category-item img {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 360px){
+        .category-items-wrapper{
+            grid-column-gap: 0px;
+            -moz-column-gap: 0px;
+            column-gap: 0px;
+        }
+
+        .category-item {
+            flex-basis: 32%;
+            
+            font-size: 0.9em;
+        }
+
+        .category-item img {
+            width: 80%;
         }
     }
 </style>

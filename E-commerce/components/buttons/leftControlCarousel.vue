@@ -31,4 +31,25 @@
       outline: none;
       z-index: 2222;
     }
+
+    @media only screen and (max-width: 992px){
+        .left-control-carousel{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .left-control-carousel{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 576px){
+        .left-control-carousel{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 360px){
+        .left-control-carousel{
+            display: none;
+        }
+    }
 </style>

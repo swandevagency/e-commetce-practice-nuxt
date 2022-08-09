@@ -37,4 +37,19 @@
             display: none;
         }
     }
+    @media only screen and (max-width: 768px){
+        .right-control-suggestion{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 576px){
+        .right-control-suggestion{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 360px){
+        .right-control-suggestion{
+            display: none;
+        }
+    }
 </style>

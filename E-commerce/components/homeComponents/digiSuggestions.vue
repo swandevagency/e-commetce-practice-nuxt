@@ -241,6 +241,23 @@
         }
         
     }
+    @media only screen and (max-width: 768px){
+        .suggestion-blocks{
+            width: 26%;
+        }
+    }
+
+    @media only screen and (max-width: 576px){
+        .suggestion-blocks{
+            width: 35%;
+        }
+    }
+
+    @media only screen and (max-width: 360px){
+        .suggestion-blocks{
+            width: 54%;
+        }
+    }
 
 
 </style>

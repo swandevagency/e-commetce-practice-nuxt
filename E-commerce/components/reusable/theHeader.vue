@@ -422,4 +422,43 @@
         }
 
     }
+
+    @media only screen and (max-width: 768px){
+        .searchBar {
+            width: 420px;
+        }
+
+        .search-icon-input {
+            width: 10%;
+        }
+    }
+
+    @media only screen and (max-width: 576px){
+        .searchBar{
+            width: initial;
+        }
+
+        .search-icon-input{
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 360px){
+    .searchBar{
+        display: none !important;
+    }
+
+    .header-signup-section{
+        a{
+            font-size: 0.8em;
+        }
+    }
+
+    .header-banner{
+        display: none;
+    }
+
+    }
+    
+
 </style>

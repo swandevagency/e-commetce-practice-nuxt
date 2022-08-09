@@ -341,4 +341,18 @@
         
     }
 
+    @media only screen and (max-width: 576px){
+        .support-contact {
+            width: 70%;
+            margin-bottom: 15px;
+        }
+    }
+
+    @media only screen and (max-width: 360px){
+        .map {
+            flex-basis: 100%;
+            margin-top: 25px;
+        }
+    }
+
 </style>
