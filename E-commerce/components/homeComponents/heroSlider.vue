@@ -118,7 +118,7 @@
             },  
             sliderOnScrollRight() {
                 let tl = gsap.timeline({});
-                    tl.to(".hero-image", {x: '-=1528' , duration:1, delay:0});
+                    tl.to(".hero-image", {x: '-=1528' , duration:0.5, delay:0});
                 
             },
 
