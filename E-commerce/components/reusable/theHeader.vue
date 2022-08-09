@@ -269,7 +269,7 @@
     }
 
     .navbar{
-        width: 60%;
+        width: auto;
     }
 
     .sub-header-navbar{
