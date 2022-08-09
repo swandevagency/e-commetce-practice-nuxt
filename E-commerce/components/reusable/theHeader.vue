@@ -392,7 +392,23 @@
 
 
 
+    @media only screen and (max-width: 1200px){
+        .navbar {
+            width: 76%;
+        }
 
+        .bottom-header-section{
+            flex-flow: column;
+        }
+
+        .navbar {
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        .header-signup-section {
+            padding: 2px 17px;
+        }
+    }
 
 
     @media only screen and (max-width: 992px){

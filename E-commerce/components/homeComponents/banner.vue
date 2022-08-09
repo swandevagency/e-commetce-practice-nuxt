@@ -137,6 +137,13 @@ export default {
         }
 
     }
+
+    @media only screen and (max-width: 1200px){
+        .banner-container{
+            display: none;
+        }
+    }
+
     @media only screen and (max-width: 992px){
         .banner-container{
             display: none !important;

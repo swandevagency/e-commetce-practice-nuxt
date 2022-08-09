@@ -309,6 +309,17 @@
         }
     }
 
+
+    @media only screen and (max-width: 1200px){
+        .support-contact {
+            width: 40%;
+        }
+
+        .header-section{
+            right: 0px;
+        }
+    }
+
     @media only screen and (max-width: 992px){
         .footer-accessibility-section{
             display: none;
