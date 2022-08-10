@@ -429,6 +429,14 @@
             padding: 0px 15px;
         }
 
+        .searchBar {
+            width: auto;
+        }
+
+        .search-icon-input {
+            width: 27%;
+        }
+
         .navbar{
             display: none;
         }
@@ -441,11 +449,11 @@
 
     @media only screen and (max-width: 768px){
         .searchBar {
-            width: 420px;
+            width: auto;
         }
 
         .search-icon-input {
-            width: 10%;
+            width: 20%;
         }
     }
 
