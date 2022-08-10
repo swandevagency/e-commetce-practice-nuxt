@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div @click="sliderOnScrollLeft">
-                <LeftControlHero />
+                <LeftControlHero /> <!-- {{count}} -->
             </div>
             <div @click="sliderOnScrollRight">
                 <RightControlHero />
@@ -22,7 +22,7 @@
     export default {
         data(){
             return{
-                
+              count: 0  
             }
         },
         props: ['paths'],
@@ -30,7 +30,9 @@
             LeftControlHero: () => import('../buttons/leftSliderButton.vue'),
             RightControlHero: () => import('../buttons/rightSliderButton.vue'),
         },
-        
+        mounted() {
+            this.sliderOnScrollLeft()
+        },
         methods: {
             /* heroButtonOn(){
                 document.querySelector('.left-control-hero').style.display = 'initial';
@@ -49,24 +51,81 @@
                 // const lastKey = Object.keys(sliderImg).pop();
                 // console.log(lastKey)
 
-                let heroImages = []
-                const sliderImg = this.paths;
-                heroImages.push(sliderImg);
-                console.log(heroImages);
-                /* const lastItem = heroImages.slice(-1); */
-                console.log(heroImages.slice(-1));
-                let tl = gsap.timeline();
-                tl.to(".hero-image", {x: '+=100%' , duration:0.5, delay:0});
-                if(heroImages.length !== (-1)){
-                    tl.restart(true)
-                    console.log('finished')  
+                // let heroImages = []
+                // const sliderImg = this.paths;
+                // heroImages.push(sliderImg);
+                // console.log(heroImages);
+                // /* const lastItem = heroImages.slice(-1); */
+                // console.log(heroImages.slice(-1));
+                // let tl = gsap.timeline();
+                // tl.to(".hero-image", {x: '+=100%' , duration:0.5, delay:0});
+                // if(heroImages.length !== (-1)){
+                //     tl.restart(true)
+                //     console.log('finished')  
+                // }
+
+                // let tl =  gsap.timeline();
+                // tl.set(".hero-image", {
+                //     x: (i) => i * 1
+                // });
+
+
+                // tl.to(".hero-image", {
+                //     duration: 5,
+                //     ease: "none",
+                //     x: "+=100%",
+                //     modifiers: {
+                //         x: gsap.utils.unitize(x => parseFloat(x) % 1000)
+                //     },
+                //     repeat: -1
+                // });
+
+                /* const heroImages = document.querySelector(".hero-image")
+                for(var i = 0; i < heroImages; i++){
+                    gsap.set('.hero-image', {
+                        x:function(i) {
+                            return i + 1528;
+                        }
+                    });
+                    
+                } */
+
+                // gsap.to('.hero-image a', {
+                //     x: '+=1528',
+                //     duration: 0.5,
+                // });
+
+
+                /* if (!heroImages.style.transform >= "translateX(9000)") {
+                    console.log('615');
+                    tl.fromTo(".hero-image", {x: '9168', ease: 'none'},{x: '0', ease: 'none'})
+                } */
+
+                // x: x => gsap.utils.snap(1528, Math.round(x / 1528) * 1528)
+                
+                // const heroImages = document.querySelector(".hero-image img")
+
+                this.count++;
+
+                let tl = gsap.timeline({});
+                if(this.count > 6){
+                    tl.to(".hero-image", {x: 0 , duration:0.5, delay:0}); 
+                    this.count = 0;   
+                } else {
+                    tl.to(".hero-image", {x: '+=1528' , duration:0.5, delay:0});    
                 }
 
 
-
-
-                // let tl = gsap.timeline({});
-                // tl.to(".hero-image", {x: '+=100%' , duration:0.5, delay:0});
+                // tl = new TimelineMax();
+                // var distancePoint = this.slides.x;
+                // var distance = Math.abs(Math.round(distancePoint / 300));
+                // if ((distance > 0) && (distance <= 2)) {
+                //     tl.to(this.slides, 1, {
+                //         x: -(distance * 300) + 300,
+                //         ease: Power2.easeOut
+                //     })
+                // }
+                
 
 
                 // let slider = [sliderImg];
@@ -88,7 +147,8 @@
                 //     sliderLeftButton.disabled = true    
                 // }
                                                       
-        
+
+                
                        
                 
                 // let slider = document.querySelector('.slider')
@@ -115,10 +175,22 @@
 
 
 
-            },  
+            },
+              
             sliderOnScrollRight() {
+                this.count--;
+
                 let tl = gsap.timeline({});
-                    tl.to(".hero-image", {x: '-=1528' , duration:0.5, delay:0});
+                if(this.count < 0){
+                    tl.to(".hero-image", {x: 9168 , duration:0.5, delay:0}); 
+                    this.count = 6;   
+                } else {
+                    tl.to(".hero-image", {x: '-=1528' , duration:0.5, delay:0});    
+                }
+                
+                    
+                
+                   
                 
             },
 
