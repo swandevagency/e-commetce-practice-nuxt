@@ -40,6 +40,7 @@ export default {
         left: 50px;
         bottom: 10px;
         z-index: 999999;
+        
     }
     .support-button{
         background-color: #ef4056;
@@ -51,6 +52,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         svg{
             fill: #fff;   
         }
