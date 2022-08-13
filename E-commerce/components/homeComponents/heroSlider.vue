@@ -32,26 +32,27 @@
         },
         mounted() {
             this.sliderOnScrollLeft()
+            setInterval(() => this.sliderOnScrollLeft(), 4000)
         },
         methods: {
             sliderOnScrollLeft() {
                 this.count++;
                 let tl = gsap.timeline({});
                 if(this.count > 6){
-                    tl.to(".hero-image", {x: 0 , duration:0.5, delay:0}); 
+                    tl.to(".hero-image", {x: 0 , duration:0.5, delay:1}); 
                     this.count = 0;   
                 } else {
-                    tl.to(".hero-image", {x: '+=100%' , duration:0.5, delay:0});    
+                    tl.to(".hero-image", {x: '+=100%' , duration:0.5, delay:1});    
                 }
             },  
             sliderOnScrollRight() {
                 this.count--;
                 let tl = gsap.timeline({});
                 if(this.count < 0){
-                    tl.to(".hero-image", {x: '+=600%' , duration:0.5, delay:0}); // in this line, on the x section put (the number of slide * 100)
+                    tl.to(".hero-image", {x: '+=600%' , duration:0.5, delay:1}); // in this line, on the x section put (the number of slide * 100)
                     this.count = 6;   
                 } else {
-                    tl.to(".hero-image", {x: '-=100%' , duration:0.5, delay:0});    
+                    tl.to(".hero-image", {x: '-=100%' , duration:0.5, delay:1});    
                 }        
             },
         },
