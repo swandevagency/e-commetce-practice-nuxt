@@ -127,6 +127,7 @@ export default {
         border-radius: 8px;
         border: 1px solid #fff;
         cursor: pointer;
+        z-index: 5;
 
         span{
             cursor: pointer;
