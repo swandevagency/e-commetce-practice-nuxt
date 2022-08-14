@@ -121,31 +121,31 @@
 </template>
 
 <script>
-    export default {
-        components:{
-            RightControl: () => import('../buttons/rightControlSuggestion.vue'),
-            LeftControl: () => import('../buttons/leftControlSuggestion.vue'),
+export default {
+    components:{
+        RightControl: () => import('../buttons/rightControlSuggestion.vue'),
+        LeftControl: () => import('../buttons/leftControlSuggestion.vue'),
+    },
+    props: {
+        suggestionTitle: String
+    },
+    methods:{
+        SuggestionLeftControl(){
+            document.querySelector('.right-control-suggestion').style.display = 'initial';
+            document.querySelector('.left-control-suggestion').style.display = 'none';
+            
+            let tl = gsap.timeline({});
+                tl.to(".suggestion-blocks", {x: '+101px'});
         },
-        props: {
-            suggestionTitle: String
-        },
-        methods:{
-            SuggestionLeftControl(){
-                document.querySelector('.right-control-suggestion').style.display = 'initial';
-                document.querySelector('.left-control-suggestion').style.display = 'none';
-                
-                let tl = gsap.timeline({});
-                    tl.to(".suggestion-blocks", {x: '+101px'});
-            },
-            SuggestionRightControl(){
-                document.querySelector('.right-control-suggestion').style.display = 'none';
-                document.querySelector('.left-control-suggestion').style.display = 'initial';
-                
-                let tl = gsap.timeline({});
-                    tl.to(".suggestion-blocks", {x: '0px'});
-            }
+        SuggestionRightControl(){
+            document.querySelector('.right-control-suggestion').style.display = 'none';
+            document.querySelector('.left-control-suggestion').style.display = 'initial';
+            
+            let tl = gsap.timeline({});
+                tl.to(".suggestion-blocks", {x: '0px'});
         }
     }
+}
 </script>
 
 

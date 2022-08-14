@@ -1,104 +1,23 @@
 <template>
     <div class="digital-category-section-wrapper">
         <div class="digital-category-container">
-            <div class="digital-category-part">
+            <div class="digital-category-part" v-for="digital in digitals" :key="digital">
                 <div class="digital-category-header">    
-                    <h4>ساعت هوشمند</h4>
-                    <p>بر اساس بازدیدهای شما</p>
+                    <h4>{{ digital.attributes.title }}</h4>
+                    <p>{{ digital.attributes.subtitle }}</p>
                 </div> 
                 <div class="digital-category-items">
                     <a>
-                        <img src="../../static/digital-categories/1.jpg"/>
+                        <img :src="`http://localhost:1337${digital.attributes.image.data[0].attributes.url}`"/>
                     </a>
                     <a>
-                        <img src="../../static/digital-categories/2.jpg"/>
+                        <img :src="`http://localhost:1337${digital.attributes.image.data[1].attributes.url}`"/>
                     </a>
                     <a>
-                        <img src="../../static/digital-categories/3.jpg"/>
+                        <img :src="`http://localhost:1337${digital.attributes.image.data[2].attributes.url}`"/>
                     </a>
                     <a>
-                        <img src="../../static/digital-categories/4.jpg"/>
-                    </a>
-                </div>
-                <div class="digital-category-more">
-                    <a>مشاهده</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
-                        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
-                    </svg>    
-                </div>
-            </div>
-
-            <div class="digital-category-part">
-                <div class="digital-category-header">    
-                    <h4>ساعت هوشمند</h4>
-                    <p>بر اساس بازدیدهای شما</p>
-                </div> 
-                <div class="digital-category-items">
-                    <a>
-                        <img src="../../static/digital-categories/5.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/6.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/7.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/8.jpg"/>
-                    </a>
-                </div>
-                <div class="digital-category-more">
-                    <a>مشاهده</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
-                        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
-                    </svg>    
-                </div>
-            </div>
-
-            <div class="digital-category-part">
-                <div class="digital-category-header">    
-                    <h4>ساعت هوشمند</h4>
-                    <p>بر اساس بازدیدهای شما</p>
-                </div> 
-                <div class="digital-category-items">
-                    <a>
-                        <img src="../../static/digital-categories/9.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/10.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/11.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/12.jpg"/>
-                    </a>
-                </div>
-                <div class="digital-category-more">
-                    <a>مشاهده</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
-                        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
-                    </svg>    
-                </div>
-            </div>
-
-            <div class="digital-category-part">
-                <div class="digital-category-header">    
-                    <h4>ساعت هوشمند</h4>
-                    <p>بر اساس بازدیدهای شما</p>
-                </div>    
-                <div class="digital-category-items">
-                    <a>
-                        <img src="../../static/digital-categories/13.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/14.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/15.jpg"/>
-                    </a>
-                    <a>
-                        <img src="../../static/digital-categories/16.jpg"/>
+                        <img :src="`http://localhost:1337${digital.attributes.image.data[3].attributes.url}`"/>
                     </a>
                 </div>
                 <div class="digital-category-more">
@@ -113,7 +32,26 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
+    data(){
+        return {
+        digitals: [],
+        title:"",
+        subtitle:"",
+        error: null
+        }
+    },
+    async mounted () {
+        try {
+            const response = await axios.get('http://localhost:1337/api/digitals?populate=*')
+            console.log(response.data)
+            this.digitals = response.data.data;
+        } catch (error) {
+            this.error = error;
+        }
+    },
 
 }
 </script>
