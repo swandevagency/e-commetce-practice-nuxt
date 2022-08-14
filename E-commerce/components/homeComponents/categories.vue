@@ -2,48 +2,12 @@
     <div>
         <div class="category">
             <div class="category-header">
-                <h3>{{categoriesTitle}}</h3>
+                <h3>{{ categoriesTitle }}</h3>
             </div>
             <div class="category-items-wrapper">
-                <div class="category-item">
-                    <img src="../../static/Categories/1.png" class="flip-vertical-right"/>
-                    <p>کالای دیجیتال</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/2.png" class="flip-vertical-right"/>
-                    <p>خودرو، ابزار و تجهیزات صنعتی</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/3.png" class="flip-vertical-right"/>
-                    <p>مد و پوشاک</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/4.png" class="flip-vertical-right"/>
-                    <p>اسباب بازی، کودک و نوزاد</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/5.png" class="flip-vertical-right"/>
-                    <p>کالاهای سوپرمارکتی</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/6.png" class="flip-vertical-right"/>
-                    <p>زیبایی و سلامتی</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/7.png" class="flip-vertical-right"/>
-                    <p>خانه و آشپزخانه</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/8.png" class="flip-vertical-right"/>
-                    <p>کتاب، لوازم تحریر و هنر</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/9.png" class="flip-vertical-right"/>
-                    <p>ورزش و سفر</p>
-                </div>
-                <div class="category-item">
-                    <img src="../../static/Categories/10.png" class="flip-vertical-right"/>
-                    <p>محصولات بومی و محلی</p>
+                <div class="category-item" v-for="category in categories" :key="category.id">
+                    <img :src="`http://localhost:1337${category.attributes.picture.data[0].attributes.url}`" class="flip-vertical-right"/>
+                    <p>{{ category.attributes.title }}</p>
                 </div>
             </div>
         </div>
@@ -51,7 +15,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
+    data(){
+        return {
+        categories: [],
+        title:"",
+        error: null
+        }
+    },
+    async mounted () {
+        try {
+            const response = await axios.get('http://localhost:1337/api/digicategories?populate=*')
+            console.log(response.data)
+            this.categories = response.data.data;
+        } catch (error) {
+            this.error = error;
+        }
+    },
     props: {
         categoriesTitle: String
     }
