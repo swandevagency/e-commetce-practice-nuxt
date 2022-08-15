@@ -69,7 +69,6 @@ import axios from 'axios'
         data(){
             return {
                 // getting response from the server
-                products: [],
                 price:"",
                 discount:"",
                 error: null,
@@ -78,14 +77,12 @@ import axios from 'axios'
                 count:""
             }
         },
-        async mounted () {
-            try {
-                const response = await axios.get('http://localhost:1337/api/products?populate=*')
-                console.log(response.data)
-                this.products = response.data.data;
-            } catch (error) {
-                this.error = error;
+        computed: {
+            products() {
+                return this.$store.state.service.products;
             }
+        },
+         mounted () {
             document.querySelector('.right-control-carousel').style.display = 'none';
         },
         components:{

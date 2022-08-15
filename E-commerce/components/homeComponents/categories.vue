@@ -20,18 +20,13 @@ import axios from 'axios'
 export default {
     data(){
         return {
-        categories: [],
         title:"",
         error: null
         }
     },
-    async mounted () {
-        try {
-            const response = await axios.get('http://localhost:1337/api/digicategories?populate=*')
-            console.log(response.data)
-            this.categories = response.data.data;
-        } catch (error) {
-            this.error = error;
+    computed: {
+        categories() {
+            return this.$store.state.service.categories;
         }
     },
     props: {

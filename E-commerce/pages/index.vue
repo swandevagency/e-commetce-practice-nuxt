@@ -63,7 +63,21 @@
                 }
             }
         },
-        
+        async asyncData({store, $axios}) {
+            try {
+                await store.dispatch('service/getHotOffer', {
+                    axios: $axios
+                })
+            } catch (error) {
+                console.log(error);
+            }
+
+            try{
+                await store.dispatch('service/getIntro', {
+                    axios: $axios
+                })
+            } catch (error) {}
+        },
         name: 'IndexPage',
         components: {
             HeroSlider: () => import ("../components/homeComponents/heroSlider.vue"),
