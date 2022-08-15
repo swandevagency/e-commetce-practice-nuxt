@@ -119,6 +119,11 @@ export default {
     .hot-offers-section{
         background: linear-gradient(to top,#5c51bf,#6763d9);
     }
+
+    .hot-offer-goods{
+        background-color: #6661d6 !important;
+    }
+
     .electronic-devices-wrapper{
         margin-top: 50px;
         padding: 0px 120px;

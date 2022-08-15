@@ -21,10 +21,10 @@
                 </div>
                 <div class="upper-header-section-left">
                     <div class="header-user-section">
-                        <nuxtLink to="/SignUp" class="header-signup-section">
+                        <NuxtLink to="/SignUp" class="header-signup-section">
                             <SignInIcon />
-                            <a class="signup">ورود | ثبت‌نام</a>
-                        </nuxtLink>
+                            ورود | ثبت‌نام
+                        </NuxtLink>
                         <div class="header-cart">
                             <CartIcon />
                         </div>
