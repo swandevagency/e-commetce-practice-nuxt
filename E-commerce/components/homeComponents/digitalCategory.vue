@@ -1,7 +1,7 @@
 <template>
     <div class="digital-category-section-wrapper">
         <div class="digital-category-container">
-            <div class="digital-category-part" v-for="digital in digitals" :key="digital">
+            <div class="digital-category-part" v-for="(digital, index) in digitals" :key="index">
                 <div class="digital-category-header">    
                     <h4>{{ digital.attributes.title }}</h4>
                     <p>{{ digital.attributes.subtitle }}</p>
