@@ -68,10 +68,14 @@ import axios from 'axios'
     export default {
         data(){
             return {
-            products: [],
-            price:"",
-            discount:"",
-            error: null
+                // getting response from the server
+                products: [],
+                price:"",
+                discount:"",
+                error: null,
+
+                // use for slider functionality
+                count:""
             }
         },
         async mounted () {
@@ -82,6 +86,7 @@ import axios from 'axios'
             } catch (error) {
                 this.error = error;
             }
+            document.querySelector('.right-control-carousel').style.display = 'none';
         },
         components:{
             LeftControl: () => import('../buttons/leftControlCarousel.vue'),
@@ -89,21 +94,28 @@ import axios from 'axios'
         },
         methods:{
             leftHotScroll(){
-                document.querySelector('.right-control-carousel').style.display = 'initial';
-                document.querySelector('.left-control-carousel').style.display = 'none';
-                
-                gsap.to('.hot-offer-goods-wrapper', {x: 890, ease: 'none' })
-                
-                /* const hotOffersCarousel = document.querySelector('.hot-offer-goods-wrapper')
-                const hotOffersCarouselLastItem = [hotOffersCarousel.length - 1]
-                */
+                this.count++;
+                let tl = gsap.timeline({});
+                if(this.count > 6){
+                    document.querySelector('.left-control-carousel').style.display = 'none'   
+                } else {
+                    document.querySelector('.left-control-carousel').style.display = 'initial';
+                    document.querySelector('.right-control-carousel').style.display = 'initial';  
+                    tl.to(".hot-offer-goods-wrapper", {x: '+=185px' , duration:0.3});    
+                }
+
             },
-            rightHotScroll(){
-                document.querySelector('.right-control-carousel').style.display = 'none';
-                document.querySelector('.left-control-carousel').style.display = 'initial';
-                
-                gsap.to('.hot-offer-goods-wrapper', {x: 0, ease: 'none' })
-            }
+            rightHotScroll() {
+                this.count--;
+                let tl = gsap.timeline({});
+                if(this.count < 1){
+                    document.querySelector('.right-control-carousel').style.display = 'none';
+                    document.querySelector('.left-control-carousel').style.display = 'initial';
+                } else {
+                    document.querySelector('.left-control-carousel').style.display = 'initial';
+                    tl.to(".hot-offer-goods-wrapper", {x: '-=185px' , duration:0.3});    
+                }        
+            }, 
         }
     }
 </script>
@@ -190,7 +202,7 @@ import axios from 'axios'
         flex-direction: column;
         align-items: center;
         padding: 12px 16px;
-        width: 182px;
+        width: 185px;
         img{
             width: 150px;
             height: 150px;

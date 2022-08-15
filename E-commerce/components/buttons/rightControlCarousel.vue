@@ -29,7 +29,6 @@
       align-items: center;
       border: 1px solid #e0e0e2;
       outline: none;
-      display: none;
     }
 
     @media only screen and (max-width: 992px){
