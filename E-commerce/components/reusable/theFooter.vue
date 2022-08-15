@@ -264,6 +264,10 @@
         flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
+
+        svg{
+            cursor: pointer;
+        }
     }
 
     .marketing{
