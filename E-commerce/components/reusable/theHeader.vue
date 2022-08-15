@@ -317,9 +317,14 @@
         margin: 0px 20px;
         color:#62666d;
         fill: #62666d;
+        user-select: none;
         a{
             margin-left: 25px;    
             margin-right: 5px;    
+        }
+
+        & a:active{
+            transform: scale(0.9);
         }
     }
 
