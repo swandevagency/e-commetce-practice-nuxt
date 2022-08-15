@@ -1,17 +1,17 @@
 <template>
     <div>
-        <!-- <div class="discount-banner-wrapper topMargin80">
-            <transition appear @before-enter="beforeEnterRight" @enter="enterRight">
+        <div class="discount-banner-wrapper topMargin80">
+            <transition appear> //@before-enter="beforeEnterRight" @enter="enterRight"
                 <div class="discount-banner-items">
                     <img :src="(`${bannerPath1}`)"/>
                 </div>
             </transition>    
-            <transition appear @before-enter="beforeEnterLeft" @enter="enterLeft"> 
+            <transition appear> // @before-enter="beforeEnterLeft" @enter="enterLeft" 
                 <div class="discount-banner-items">
                     <img :src="(`${bannerPath2}`)" />
                 </div>
             </transition>
-        </div> -->
+        </div>
     </div>
 </template>
 
@@ -28,21 +28,21 @@
             'bannerPath3',
             'bannerPath4',
         ],
-        /* methods: {
-            beforeEnterRight: (el) => {
-                el.style.transform = 'translateX(1000px)'
-            },
-            enterRight(el){
-                gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
-            },
+        // methods: {
+        //     beforeEnterRight: (el) => {
+        //         el.style.transform = 'translateX(1000px)'
+        //     },
+        //     enterRight(el){
+        //         gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
+        //     },
 
-            beforeEnterLeft: (el) => {
-                el.style.transform = 'translateX(-1000px)'
-            },
-            enterLeft(el){
-                gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
-            },
-        } */
+        //     beforeEnterLeft: (el) => {
+        //         el.style.transform = 'translateX(-1000px)'
+        //     },
+        //     enterLeft(el){
+        //         gsap.to(el , {duration: 3 , x : 0 , ease: 'bounce.out' , stagger : 0.1});
+        //     },
+        // }
     }
 </script>
 

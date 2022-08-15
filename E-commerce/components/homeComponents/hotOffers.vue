@@ -208,6 +208,10 @@ import axios from 'axios'
             height: 150px;
             cursor: pointer;
         }
+
+        & img:hover{
+            transform: scale(1.1);
+        }
     }
 
     .hot-offer-price-wrapper{
