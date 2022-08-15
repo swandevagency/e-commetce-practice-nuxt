@@ -30,6 +30,7 @@
       border: 1px solid #e0e0e2;
       outline: none;
       z-index: 2222;
+      display: none;
     }
 
     @media only screen and (max-width: 992px){

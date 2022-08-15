@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="hero-section-wrapper">
+        <div class="hero-section-wrapper"  @mouseenter="buttonActive()" @mouseleave="buttonDisable()">
             <div class="hero-section" id="hero-slider" v-if="paths">
                 <div class="hero-image" v-for="path in paths" :key="path.id">
                     <a>
@@ -39,10 +39,9 @@
             LeftControlHero: () => import('../buttons/leftSliderButton.vue'),
             RightControlHero: () => import('../buttons/rightSliderButton.vue'),
         },
-        mounted() {
+        mounted() {        
             this.sliderOnScrollLeft()
-            setInterval(() => this.sliderOnScrollLeft(), 3000)            
-            
+            setInterval(() => this.sliderOnScrollLeft(), 3000)             
         },
         methods: {
             sliderIndicator() {
@@ -150,6 +149,14 @@
                     tl.to(".hero-image", {x: '-=100%' , duration:1});    
                 }        
             },
+            buttonActive(){
+                document.querySelector('.right-control-hero').style.display = 'initial',
+                document.querySelector('.left-control-hero').style.display = 'initial'
+            },
+            buttonDisable(){
+                document.querySelector('.right-control-hero').style.display = 'none',
+                document.querySelector('.left-control-hero').style.display = 'none'
+            }
         },
     }
 </script>
@@ -198,11 +205,6 @@
             display: inline-block;
             margin-right: 10px;
         }
-
-        & span:active{
-            transform: scale(1.1);
-            background-color: #fff;
-        }
     }
 
     @media only screen and (max-width: 992px){
@@ -212,6 +214,10 @@
 
         .hero-section{
             border-radius: 0px;
+        }
+
+        .slider-dots{
+            display: none;
         }
     }
 </style>
