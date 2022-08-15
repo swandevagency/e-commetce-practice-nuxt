@@ -190,6 +190,10 @@ export default {
             width: 100%;
             cursor: pointer;
         }
+
+        & img:hover{
+            transform: scale(1.2);
+        }
     }
 
 

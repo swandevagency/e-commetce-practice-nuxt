@@ -70,6 +70,11 @@ export default {
         img:hover{
             filter: drop-shadow(3px 3px 5px #00000040);
         }
+
+        &:hover{
+            transform: scale(1.1);
+
+        }
     }
 
     .sub-hero-more{

@@ -84,6 +84,9 @@ export default {
             -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
             animation: flip-vertical-right 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
         }
+        p{
+            transform: scale(1.1);
+        }
     }
 
     @-webkit-keyframes flip-vertical-right {
