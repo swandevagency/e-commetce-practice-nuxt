@@ -45,6 +45,7 @@
     export default {       
         data() {
             return{
+                msg:'',
                 yo:[
                     {path: require('@/static/Slider-Images/1.jpg')},
                     {path: require('@/static/Slider-Images/2.jpg')},
@@ -76,7 +77,9 @@
                 await store.dispatch('service/getIntro', {
                     axios: $axios
                 })
-            } catch (error) {}
+            } catch (error) {
+                this.msg = 'مشکلی پیش آمده لطفا بعدا تلاش فرمایید'
+            }
         },
         name: 'IndexPage',
         components: {
