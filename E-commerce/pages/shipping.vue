@@ -18,7 +18,8 @@
                         </div>
                         <div class="shipment-price">
                             <h5>هزینه ارسال</h5>
-                            <p>رایگان</p>
+                            <p v-if="address = !address">20 هزار تومن</p>
+                            <p v-else>رایگان</p>
                         </div>
                         <p class="price-tip">هزینه ارسال براساس آدرس، زمان تحویل، وزن و حجم مرسوله شما محاسبه می‌شود</p>
                         <div class="whole-price">
@@ -53,6 +54,10 @@
 
 <script>
 export default {
+    data(){
+        return{
+        }
+    },
     components:{
         Shipping:() => import ("../components/shippingComponent/shipmentContainer.vue"),  
         FreeShipmentIcon:() => import ("../components/icons/freeShipment.vue")
@@ -179,7 +184,7 @@ export default {
         border-radius: 8px;
         margin-top: 25px;
         padding: 2px 0px;
-
+        cursor: pointer;
     }
     
     .free-shipping-description{

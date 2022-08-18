@@ -43,7 +43,8 @@ export default {
         return{
             address: true
         }
-    }
+    },
+    props: [ '!address' ]
 }
 </script>
 

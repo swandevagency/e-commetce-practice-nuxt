@@ -46,6 +46,7 @@ export default {
         }
     },
     components:{
+        
         Product:() => import ("../components/cartComponents/cartProduct.vue"),
         FreeShipmentIcon:() => import ("../components/icons/freeShipment.vue")
     },

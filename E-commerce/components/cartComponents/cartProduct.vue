@@ -109,6 +109,7 @@ export default {
             outline: none;
             color: #ef4056;
             font-size: 1.8em;
+            cursor: pointer;
         }
     }
 
