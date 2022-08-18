@@ -21,12 +21,15 @@
                 </div>
                 <div class="upper-header-section-left">
                     <div class="header-user-section">
-                        <NuxtLink to="/SignUp" class="header-signup-section">
-                            <SignInIcon />
-                            ورود | ثبت‌نام
+                        <NuxtLink to="/" class="header-signup-section">
+                            <!-- <SignInIcon />
+                            ورود | ثبت‌نام -->
+                            <p>مشاهده صفحه اصلی</p>
                         </NuxtLink>
                         <div class="header-cart">
-                            <CartIcon />
+                            <NuxtLink to="/cart">
+                                <CartIcon />
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -243,7 +246,7 @@
         align-items: center;
         border: 1px solid #e0e0e2;
         border-radius:8px;
-        a{
+        a,p{
             margin-right: 10px;
             color: #000;
             font-size: 1em;
