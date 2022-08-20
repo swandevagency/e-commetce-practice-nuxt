@@ -14,7 +14,8 @@
             <div @click="sliderOnScrollRight">
                 <RightControlHero />
             </div>
-            <div class="slider-dots" v-on="sliderIndicator()">
+
+            <!-- <div class="slider-dots" v-on="sliderIndicator()">
                 <span id="1"></span>
                 <span id="2"></span>
                 <span id="3"></span>
@@ -22,7 +23,7 @@
                 <span id="5"></span>
                 <span id="6"></span>
                 <span id="7"></span>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -44,91 +45,91 @@
             setInterval(() => this.sliderOnScrollLeft(), 3000)             
         },
         methods: {
-            sliderIndicator() {
-            // slider indicators
-                const dot1 = document.getElementById('1') 
-                const dot2 = document.getElementById('2') 
-                const dot3 = document.getElementById('3') 
-                const dot4 = document.getElementById('4') 
-                const dot5 = document.getElementById('5') 
-                const dot6 = document.getElementById('6') 
-                const dot7 = document.getElementById('7') 
+            // sliderIndicator() {
+            // // slider indicators
+            //     const dot1 = document.getElementById('1') 
+            //     const dot2 = document.getElementById('2') 
+            //     const dot3 = document.getElementById('3') 
+            //     const dot4 = document.getElementById('4') 
+            //     const dot5 = document.getElementById('5') 
+            //     const dot6 = document.getElementById('6') 
+            //     const dot7 = document.getElementById('7') 
                 
-                if(this.count == 0){
-                    dot1.style.backgroundColor = '#fff';
-                    dot1.style.transform = 'scaleX(3)';
-                    dot1.style.borderRadius = '1px';
-                } else {
-                    dot1.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot1.style.transform = 'scaleX(1)';
-                    dot1.style.borderRadius = '50%';
-                }
+            //     if(this.count == 0){
+            //         dot1.style.backgroundColor = '#fff';
+            //         dot1.style.transform = 'scaleX(3)';
+            //         dot1.style.borderRadius = '1px';
+            //     } else {
+            //         dot1.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot1.style.transform = 'scaleX(1)';
+            //         dot1.style.borderRadius = '50%';
+            //     }
 
-                if(this.count == 1){
-                    dot2.style.backgroundColor = '#fff';
-                    dot2.style.transform = 'scaleX(3)';
-                    dot2.style.borderRadius = '1px';
-                } else {
-                    dot2.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot2.style.transform = 'scaleX(1)';
-                    dot2.style.borderRadius = '50%';
-                }
+            //     if(this.count == 1){
+            //         dot2.style.backgroundColor = '#fff';
+            //         dot2.style.transform = 'scaleX(3)';
+            //         dot2.style.borderRadius = '1px';
+            //     } else {
+            //         dot2.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot2.style.transform = 'scaleX(1)';
+            //         dot2.style.borderRadius = '50%';
+            //     }
 
-                if(this.count == 2){
-                    dot3.style.backgroundColor = '#fff';
-                    dot3.style.transform = 'scaleX(3)';
-                    dot3.style.borderRadius = '1px';
+            //     if(this.count == 2){
+            //         dot3.style.backgroundColor = '#fff';
+            //         dot3.style.transform = 'scaleX(3)';
+            //         dot3.style.borderRadius = '1px';
 
-                } else {
-                    dot3.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot3.style.transform = 'scaleX(1)';
-                    dot3.style.borderRadius = '50%';
-                }
+            //     } else {
+            //         dot3.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot3.style.transform = 'scaleX(1)';
+            //         dot3.style.borderRadius = '50%';
+            //     }
                 
-                if(this.count == 3){
-                    dot4.style.backgroundColor = '#fff';
-                    dot4.style.transform = 'scaleX(3)';
-                    dot4.style.borderRadius = '1px';
+            //     if(this.count == 3){
+            //         dot4.style.backgroundColor = '#fff';
+            //         dot4.style.transform = 'scaleX(3)';
+            //         dot4.style.borderRadius = '1px';
 
-                } else {
-                    dot4.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot4.style.transform = 'scaleX(1)';
-                    dot4.style.borderRadius = '50%';
-                }
+            //     } else {
+            //         dot4.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot4.style.transform = 'scaleX(1)';
+            //         dot4.style.borderRadius = '50%';
+            //     }
                 
-                if(this.count == 4){
-                    dot5.style.backgroundColor = '#fff';
-                    dot5.style.transform = 'scaleX(3)';
-                    dot5.style.borderRadius = '1px';
+            //     if(this.count == 4){
+            //         dot5.style.backgroundColor = '#fff';
+            //         dot5.style.transform = 'scaleX(3)';
+            //         dot5.style.borderRadius = '1px';
 
-                } else {
-                    dot5.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot5.style.transform = 'scaleX(1)';
-                    dot5.style.borderRadius = '50%';
-                }
+            //     } else {
+            //         dot5.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot5.style.transform = 'scaleX(1)';
+            //         dot5.style.borderRadius = '50%';
+            //     }
                 
-                if(this.count == 5){
-                    dot6.style.backgroundColor = '#fff';
-                    dot6.style.transform = 'scaleX(3)';
-                    dot6.style.borderRadius = '1px';
+            //     if(this.count == 5){
+            //         dot6.style.backgroundColor = '#fff';
+            //         dot6.style.transform = 'scaleX(3)';
+            //         dot6.style.borderRadius = '1px';
 
-                } else {
-                    dot6.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot6.style.transform = 'scaleX(1)';
-                    dot6.style.borderRadius = '50%';
-                }
+            //     } else {
+            //         dot6.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot6.style.transform = 'scaleX(1)';
+            //         dot6.style.borderRadius = '50%';
+            //     }
                 
-                if(this.count == 6){
-                    dot7.style.backgroundColor = '#fff';
-                    dot7.style.transform = 'scaleX(3)';
-                    dot7.style.borderRadius = '1px';
+            //     if(this.count == 6){
+            //         dot7.style.backgroundColor = '#fff';
+            //         dot7.style.transform = 'scaleX(3)';
+            //         dot7.style.borderRadius = '1px';
 
-                } else {
-                    dot7.style.backgroundColor = 'rgb(132, 131, 131)';
-                    dot7.style.transform = 'scaleX(1)';
-                    dot7.style.borderRadius = '50%';
-                }
-            },
+            //     } else {
+            //         dot7.style.backgroundColor = 'rgb(132, 131, 131)';
+            //         dot7.style.transform = 'scaleX(1)';
+            //         dot7.style.borderRadius = '50%';
+            //     }
+            // },
             sliderOnScrollLeft() {
                 this.count++;
                 let tl = gsap.timeline({});

@@ -82,9 +82,9 @@ import axios from 'axios'
                 return this.$store.state.service.products;
             }
         },
-         mounted () {
-            document.querySelector('.right-control-carousel').style.display = 'none';
-        },
+        //  mounted () {
+        //     document.querySelector('.right-control-carousel').style.display = 'none';
+        // },
         components:{
             LeftControl: () => import('../buttons/leftControlCarousel.vue'),
             RightControl: () => import('../buttons/rightControlCarousel.vue')
