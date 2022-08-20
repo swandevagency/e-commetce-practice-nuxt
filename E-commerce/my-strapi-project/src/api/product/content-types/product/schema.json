@@ -54,6 +54,12 @@
     },
     "name": {
       "type": "string"
+    },
+    "tallestLength": {
+      "type": "string"
+    },
+    "smallestLenght": {
+      "type": "string"
     }
   }
 }
