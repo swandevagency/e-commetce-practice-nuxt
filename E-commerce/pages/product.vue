@@ -187,6 +187,21 @@
 
 <script>
 export default {
+    async asyncData({store, $axios}) {
+        try {
+            await store.dispatch('service/getCategoryProducts', {
+                axios: $axios,
+                id: 2,
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    computed: {
+        categoryProducts() {
+            return this.$store.state.service.categoryProducts;
+        }
+    },
     data(){
         return {
             color:''
@@ -248,7 +263,7 @@ export default {
     .product-description-content{
         flex-basis: 60%;
         padding: 10px;
-        margin-top: -45px;
+        margin-top: -50px;
     }
 
     .product-description-title{

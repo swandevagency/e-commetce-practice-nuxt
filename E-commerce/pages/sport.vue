@@ -1,34 +1,56 @@
 <template>
     <div>
         <div class="electronic-devices-wrapper">
-            <HeroSlider
-                :paths="yo"
-            />
-
+            <div class="landing-image">
+                <img src="../static/Sport/landing.jpg"/>
+            </div>
             <HotOffers />
+
+            <div class="product-category-section-wrapper">
+                <div class="product-category">
+                    <div class="product-category-item">
+                        <div>
+                            <img src="../static/product-category/barfix.jpg" />
+                        </div>
+                        <h4>بارفیکس</h4>
+                    </div>
+                    <div class="product-category-item">
+                        <div>
+                            <img src="../static/product-category/rope.jpg" />
+                        </div>
+                        <h4>طناب</h4>
+                    </div>
+                    <div class="product-category-item">
+                        <div>
+                            <img src="../static/product-category/ball.jpg" />
+                        </div>
+                        <h4>توپ</h4>
+                    </div>
+                </div>
+            </div>
 
             <Categories categories-title="خرید بر اساس دسته‌بندی" />
 
             <div class="electronic-devices-banners-section">
                 <a class="electronic-devices-banner">
-                    <img src="../static/electronic-devices-page-banners/1.jpg" />
+                    <img src="../static/sport-banners/1.jpg" />
                 </a>
                 <a class="electronic-devices-banner">
-                    <img src="../static/electronic-devices-page-banners/2.jpg" />
+                    <img src="../static/sport-banners/2.jpg" />
                 </a>
                 <a class="electronic-devices-banner">
-                    <img src="../static/electronic-devices-page-banners/3.jpg" />
+                    <img src="../static/sport-banners/3.jpg" />
                 </a>
                 <a class="electronic-devices-banner">
-                    <img src="../static/electronic-devices-page-banners/4.jpg" />
+                    <img src="../static/sport-banners/4.jpg" />
                 </a>
             </div>
 
             <DigiSuggestions suggestion-title="دسته‌بندی‌های پیشنهادی"/>
-
+ 
             <blog />
 
-            <div class="digital-description-section">
+<!--        <div class="digital-description-section">
                 <div class="digital-description-section-header">
                     <h1>کالای دیجیتال</h1>
                 </div>
@@ -76,7 +98,7 @@
                         </p>
                     </div>
                 </div>
-            </div>   
+            </div>    -->
         </div>
     </div>
 </template>
@@ -108,13 +130,21 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/color.scss";
+    .landing-image{
+        width: 100%;
+
+        img{
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
 
     .hot-offers-section{
-        background: linear-gradient(to top,#5c51bf,#6763d9);
+        background: linear-gradient(to top,#70b950,#5c9b40);
     }
 
     .hot-offer-goods{
-        background-color: #6661d6 !important;
+        background-color: #5c9b40 !important;
     }
 
     .electronic-devices-wrapper{
@@ -127,8 +157,40 @@ export default {
     }
 
     .hot-offers-section{
-        
         margin: 20px 0px 25px;
+    }
+
+    .product-category-section-wrapper{
+        width: 100%;
+    }
+
+    .product-category{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .product-category-item{
+        flex-basis: 30%;
+        padding: 15px;
+        background-color: #f7f7f8;
+        border-radius: 8px;
+        border: 1px solid #dadada;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        img{
+            width: 100%;
+        }
+
+        &:hover{
+            /* ------------------- box-shadow: 0px 0px 5px #00000050; ------------------- */
+        }
     }
 
     .electronic-devices-banners-section{
@@ -265,5 +327,15 @@ export default {
             }
         }
         
+    }
+
+    @media only screen and (max-width: 992px){
+        .product-category{
+            flex-direction: column;
+
+            .product-category-item{
+                margin-bottom: 20px;
+            }
+        }
     }
 </style>
